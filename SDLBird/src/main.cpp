@@ -37,6 +37,7 @@ void setup(void) {
     
 }
 
+/// Polls for user input and fires associated events
 void pollInput(void) {
     SDL_Event event;
     SDL_PollEvent(&event);
