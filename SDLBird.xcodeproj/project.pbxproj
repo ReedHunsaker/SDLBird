@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		522626882C0BB6C500897A75 /* SDL3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52997C2B2C0BB63E00B68BB1 /* SDL3.framework */; platformFilters = (ios, macos, ); };
-		522626892C0BB6C500897A75 /* SDL3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52997C2B2C0BB63E00B68BB1 /* SDL3.framework */; platformFilters = (ios, macos, ); settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5225655B2C1A7C39005C84DE /* SDL3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5225655A2C1A7C32005C84DE /* SDL3.framework */; };
+		5225655C2C1A7C39005C84DE /* SDL3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5225655A2C1A7C32005C84DE /* SDL3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		522565712C1A7C54005C84DE /* SDL3_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 522565692C1A7C49005C84DE /* SDL3_image.framework */; };
+		522565722C1A7C54005C84DE /* SDL3_image.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 522565692C1A7C49005C84DE /* SDL3_image.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		522565772C1A83EE005C84DE /* Bird.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 522565752C1A83EE005C84DE /* Bird.cpp */; };
+		5225657D2C1A9D23005C84DE /* bird.png in Resources */ = {isa = PBXBuildFile; fileRef = 5225657C2C1A9D23005C84DE /* bird.png */; };
 		52997C102C0BB58000B68BB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52997C0F2C0BB58000B68BB1 /* Assets.xcassets */; };
 		52997C132C0BB58000B68BB1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 52997C122C0BB58000B68BB1 /* Base */; };
 		52997C1E2C0BB5C100B68BB1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52997C1D2C0BB5C100B68BB1 /* main.cpp */; };
@@ -16,23 +20,31 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		52997C2A2C0BB63E00B68BB1 /* PBXContainerItemProxy */ = {
+		522565592C1A7C32005C84DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 52997C242C0BB63E00B68BB1 /* SDL.xcodeproj */;
+			containerPortal = 522565532C1A7C32005C84DE /* SDL.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = BECDF66C0761BA81005FE872;
 			remoteInfo = SDL3;
 		};
+		522565682C1A7C49005C84DE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5225655E2C1A7C49005C84DE /* SDL_image.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BE1FA72E07AF4C45004B6283;
+			remoteInfo = SDL3_image;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		5226268A2C0BB6C500897A75 /* Embed Frameworks */ = {
+		5225655D2C1A7C39005C84DE /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				522626892C0BB6C500897A75 /* SDL3.framework in Embed Frameworks */,
+				522565722C1A7C54005C84DE /* SDL3_image.framework in Embed Frameworks */,
+				5225655C2C1A7C39005C84DE /* SDL3.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -40,12 +52,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		522565532C1A7C32005C84DE /* SDL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL.xcodeproj; path = ../SDL/Xcode/SDL/SDL.xcodeproj; sourceTree = "<group>"; };
+		5225655E2C1A7C49005C84DE /* SDL_image.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL_image.xcodeproj; path = ../SDL_image/Xcode/SDL_image.xcodeproj; sourceTree = "<group>"; };
+		522565752C1A83EE005C84DE /* Bird.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Bird.cpp; sourceTree = "<group>"; };
+		522565762C1A83EE005C84DE /* Bird.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Bird.hpp; sourceTree = "<group>"; };
+		5225657C2C1A9D23005C84DE /* bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bird.png; path = ../../../../Documents/bird.png; sourceTree = "<group>"; };
 		5291EA8F2C1153DA0022E7EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		52997BFD2C0BB57F00B68BB1 /* SDLBird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDLBird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52997C0F2C0BB58000B68BB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52997C122C0BB58000B68BB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52997C1D2C0BB5C100B68BB1 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		52997C242C0BB63E00B68BB1 /* SDL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL.xcodeproj; path = ../SDL/Xcode/SDL/SDL.xcodeproj; sourceTree = "<group>"; };
 		52997C2C2C0BB66E00B68BB1 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -54,17 +70,44 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				522626882C0BB6C500897A75 /* SDL3.framework in Frameworks */,
+				522565712C1A7C54005C84DE /* SDL3_image.framework in Frameworks */,
+				5225655B2C1A7C39005C84DE /* SDL3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		522565542C1A7C32005C84DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5225655A2C1A7C32005C84DE /* SDL3.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5225655F2C1A7C49005C84DE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				522565692C1A7C49005C84DE /* SDL3_image.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5225657B2C1A9D08005C84DE /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				5225657C2C1A9D23005C84DE /* bird.png */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
 		522626912C0C223A00897A75 /* src */ = {
 			isa = PBXGroup;
 			children = (
 				52997C1D2C0BB5C100B68BB1 /* main.cpp */,
+				522565752C1A83EE005C84DE /* Bird.cpp */,
+				522565762C1A83EE005C84DE /* Bird.hpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -90,6 +133,7 @@
 		52997BFF2C0BB57F00B68BB1 /* SDLBird */ = {
 			isa = PBXGroup;
 			children = (
+				5225657B2C1A9D08005C84DE /* resources */,
 				5291EA8F2C1153DA0022E7EB /* Info.plist */,
 				522626912C0C223A00897A75 /* src */,
 				52997C0F2C0BB58000B68BB1 /* Assets.xcassets */,
@@ -101,17 +145,10 @@
 		52997C232C0BB63E00B68BB1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				52997C242C0BB63E00B68BB1 /* SDL.xcodeproj */,
+				5225655E2C1A7C49005C84DE /* SDL_image.xcodeproj */,
+				522565532C1A7C32005C84DE /* SDL.xcodeproj */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		52997C252C0BB63E00B68BB1 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				52997C2B2C0BB63E00B68BB1 /* SDL3.framework */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,7 +161,7 @@
 				52997BF92C0BB57F00B68BB1 /* Sources */,
 				52997BFA2C0BB57F00B68BB1 /* Frameworks */,
 				52997BFB2C0BB57F00B68BB1 /* Resources */,
-				5226268A2C0BB6C500897A75 /* Embed Frameworks */,
+				5225655D2C1A7C39005C84DE /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -162,8 +199,12 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 52997C252C0BB63E00B68BB1 /* Products */;
-					ProjectRef = 52997C242C0BB63E00B68BB1 /* SDL.xcodeproj */;
+					ProductGroup = 522565542C1A7C32005C84DE /* Products */;
+					ProjectRef = 522565532C1A7C32005C84DE /* SDL.xcodeproj */;
+				},
+				{
+					ProductGroup = 5225655F2C1A7C49005C84DE /* Products */;
+					ProjectRef = 5225655E2C1A7C49005C84DE /* SDL_image.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -174,11 +215,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		52997C2B2C0BB63E00B68BB1 /* SDL3.framework */ = {
+		5225655A2C1A7C32005C84DE /* SDL3.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = SDL3.framework;
-			remoteRef = 52997C2A2C0BB63E00B68BB1 /* PBXContainerItemProxy */;
+			remoteRef = 522565592C1A7C32005C84DE /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		522565692C1A7C49005C84DE /* SDL3_image.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SDL3_image.framework;
+			remoteRef = 522565682C1A7C49005C84DE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -188,6 +236,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5225657D2C1A9D23005C84DE /* bird.png in Resources */,
 				52997C102C0BB58000B68BB1 /* Assets.xcassets in Resources */,
 				52997C2D2C0BB66E00B68BB1 /* Config.xcconfig in Resources */,
 				52997C132C0BB58000B68BB1 /* Base in Resources */,
@@ -201,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				522565772C1A83EE005C84DE /* Bird.cpp in Sources */,
 				52997C1E2C0BB5C100B68BB1 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
