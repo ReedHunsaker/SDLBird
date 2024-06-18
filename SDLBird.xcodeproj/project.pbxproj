@@ -17,6 +17,7 @@
 		52997C132C0BB58000B68BB1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 52997C122C0BB58000B68BB1 /* Base */; };
 		52997C1E2C0BB5C100B68BB1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52997C1D2C0BB5C100B68BB1 /* main.cpp */; };
 		52997C2D2C0BB66E00B68BB1 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 52997C2C2C0BB66E00B68BB1 /* Config.xcconfig */; };
+		52B0854F2C223DC100FD5FB8 /* ImageLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52B0854E2C223DC100FD5FB8 /* ImageLoader.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		52997C122C0BB58000B68BB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52997C1D2C0BB5C100B68BB1 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		52997C2C2C0BB66E00B68BB1 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		52B0854D2C223DC100FD5FB8 /* ImageLoader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ImageLoader.hpp; sourceTree = "<group>"; };
+		52B0854E2C223DC100FD5FB8 /* ImageLoader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ImageLoader.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +111,8 @@
 				52997C1D2C0BB5C100B68BB1 /* main.cpp */,
 				522565752C1A83EE005C84DE /* Bird.cpp */,
 				522565762C1A83EE005C84DE /* Bird.hpp */,
+				52B0854D2C223DC100FD5FB8 /* ImageLoader.hpp */,
+				52B0854E2C223DC100FD5FB8 /* ImageLoader.cpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				522565772C1A83EE005C84DE /* Bird.cpp in Sources */,
+				52B0854F2C223DC100FD5FB8 /* ImageLoader.cpp in Sources */,
 				52997C1E2C0BB5C100B68BB1 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
