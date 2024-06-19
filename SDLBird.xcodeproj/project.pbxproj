@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5214B0872C232BB600AFB469 /* Background.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5214B07F2C232BB600AFB469 /* Background.cpp */; };
+		5214B08D2C23328C00AFB469 /* backgroundPortrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 5214B08C2C23328C00AFB469 /* backgroundPortrait.png */; };
+		5214B08F2C2332B500AFB469 /* backgroundLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 5214B08E2C2332B400AFB469 /* backgroundLandscape.png */; };
 		5225655B2C1A7C39005C84DE /* SDL3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5225655A2C1A7C32005C84DE /* SDL3.framework */; };
 		5225655C2C1A7C39005C84DE /* SDL3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5225655A2C1A7C32005C84DE /* SDL3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		522565712C1A7C54005C84DE /* SDL3_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 522565692C1A7C49005C84DE /* SDL3_image.framework */; };
@@ -58,6 +61,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5214B07F2C232BB600AFB469 /* Background.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Background.cpp; sourceTree = "<group>"; };
+		5214B0862C232BB600AFB469 /* Background.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Background.hpp; sourceTree = "<group>"; };
+		5214B08C2C23328C00AFB469 /* backgroundPortrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundPortrait.png; sourceTree = "<group>"; };
+		5214B08E2C2332B400AFB469 /* backgroundLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundLandscape.png; sourceTree = "<group>"; };
 		522565532C1A7C32005C84DE /* SDL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL.xcodeproj; path = ../SDL/Xcode/SDL/SDL.xcodeproj; sourceTree = "<group>"; };
 		5225655E2C1A7C49005C84DE /* SDL_image.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL_image.xcodeproj; path = ../SDL_image/Xcode/SDL_image.xcodeproj; sourceTree = "<group>"; };
 		522565752C1A83EE005C84DE /* Bird.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Bird.cpp; sourceTree = "<group>"; };
@@ -113,6 +120,8 @@
 		5225657B2C1A9D08005C84DE /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				5214B08E2C2332B400AFB469 /* backgroundLandscape.png */,
+				5214B08C2C23328C00AFB469 /* backgroundPortrait.png */,
 				52B085732C22A3EA00FD5FB8 /* bird-downFlap.png */,
 				52B085712C22A3EA00FD5FB8 /* bird-midFlap.png */,
 				52B085722C22A3EA00FD5FB8 /* bird-upFlap.png */,
@@ -123,6 +132,8 @@
 		522626912C0C223A00897A75 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				5214B07F2C232BB600AFB469 /* Background.cpp */,
+				5214B0862C232BB600AFB469 /* Background.hpp */,
 				52997C1D2C0BB5C100B68BB1 /* main.cpp */,
 				522565752C1A83EE005C84DE /* Bird.cpp */,
 				522565762C1A83EE005C84DE /* Bird.hpp */,
@@ -262,6 +273,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5214B08D2C23328C00AFB469 /* backgroundPortrait.png in Resources */,
+				5214B08F2C2332B500AFB469 /* backgroundLandscape.png in Resources */,
 				52B085742C22A3EA00FD5FB8 /* bird-midFlap.png in Resources */,
 				52B085752C22A3EA00FD5FB8 /* bird-upFlap.png in Resources */,
 				52B085762C22A3EA00FD5FB8 /* bird-downFlap.png in Resources */,
@@ -284,6 +297,7 @@
 				522565772C1A83EE005C84DE /* Bird.cpp in Sources */,
 				52B0854F2C223DC100FD5FB8 /* ImageLoader.cpp in Sources */,
 				52997C1E2C0BB5C100B68BB1 /* main.cpp in Sources */,
+				5214B0872C232BB600AFB469 /* Background.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
