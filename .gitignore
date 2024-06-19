@@ -118,12 +118,6 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
-<<<<<<< HEAD
 lib
 Include
 makefile
-=======
-
-Include
-lib
->>>>>>> main
