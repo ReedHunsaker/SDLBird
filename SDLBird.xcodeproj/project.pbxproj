@@ -12,11 +12,16 @@
 		522565712C1A7C54005C84DE /* SDL3_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 522565692C1A7C49005C84DE /* SDL3_image.framework */; };
 		522565722C1A7C54005C84DE /* SDL3_image.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 522565692C1A7C49005C84DE /* SDL3_image.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		522565772C1A83EE005C84DE /* Bird.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 522565752C1A83EE005C84DE /* Bird.cpp */; };
-		5225657F2C1AA19E005C84DE /* bird.png in Resources */ = {isa = PBXBuildFile; fileRef = 5225657E2C1AA19E005C84DE /* bird.png */; };
 		52997C102C0BB58000B68BB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52997C0F2C0BB58000B68BB1 /* Assets.xcassets */; };
 		52997C132C0BB58000B68BB1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 52997C122C0BB58000B68BB1 /* Base */; };
 		52997C1E2C0BB5C100B68BB1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52997C1D2C0BB5C100B68BB1 /* main.cpp */; };
 		52997C2D2C0BB66E00B68BB1 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 52997C2C2C0BB66E00B68BB1 /* Config.xcconfig */; };
+		52B0855E2C22470000FD5FB8 /* PhysicsBody.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52B0855C2C22470000FD5FB8 /* PhysicsBody.cpp */; };
+		52B085672C22479B00FD5FB8 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52B085652C22479B00FD5FB8 /* Entity.cpp */; };
+		52B0856E2C229FE600FD5FB8 /* Constants.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52B0856C2C229FE600FD5FB8 /* Constants.cpp */; };
+		52B085742C22A3EA00FD5FB8 /* bird-midFlap.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B085712C22A3EA00FD5FB8 /* bird-midFlap.png */; };
+		52B085752C22A3EA00FD5FB8 /* bird-upflap.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B085722C22A3EA00FD5FB8 /* bird-upflap.png */; };
+		52B085762C22A3EA00FD5FB8 /* bird-downFlap.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B085732C22A3EA00FD5FB8 /* bird-downFlap.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,13 +61,21 @@
 		5225655E2C1A7C49005C84DE /* SDL_image.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL_image.xcodeproj; path = ../SDL_image/Xcode/SDL_image.xcodeproj; sourceTree = "<group>"; };
 		522565752C1A83EE005C84DE /* Bird.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Bird.cpp; sourceTree = "<group>"; };
 		522565762C1A83EE005C84DE /* Bird.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Bird.hpp; sourceTree = "<group>"; };
-		5225657E2C1AA19E005C84DE /* bird.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bird.png; sourceTree = "<group>"; };
 		5291EA8F2C1153DA0022E7EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		52997BFD2C0BB57F00B68BB1 /* SDLBird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDLBird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52997C0F2C0BB58000B68BB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52997C122C0BB58000B68BB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52997C1D2C0BB5C100B68BB1 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		52997C2C2C0BB66E00B68BB1 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		52B0855C2C22470000FD5FB8 /* PhysicsBody.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsBody.cpp; sourceTree = "<group>"; };
+		52B0855D2C22470000FD5FB8 /* PhysicsBody.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PhysicsBody.hpp; sourceTree = "<group>"; };
+		52B085652C22479B00FD5FB8 /* Entity.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
+		52B085662C22479B00FD5FB8 /* Entity.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Entity.hpp; sourceTree = "<group>"; };
+		52B0856C2C229FE600FD5FB8 /* Constants.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Constants.cpp; sourceTree = "<group>"; };
+		52B0856D2C229FE600FD5FB8 /* Constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Constants.hpp; sourceTree = "<group>"; };
+		52B085712C22A3EA00FD5FB8 /* bird-midFlap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bird-midFlap.png"; sourceTree = "<group>"; };
+		52B085722C22A3EA00FD5FB8 /* bird-upflap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bird-upflap.png"; sourceTree = "<group>"; };
+		52B085732C22A3EA00FD5FB8 /* bird-downFlap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bird-downFlap.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +110,9 @@
 		5225657B2C1A9D08005C84DE /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				5225657E2C1AA19E005C84DE /* bird.png */,
+				52B085732C22A3EA00FD5FB8 /* bird-downFlap.png */,
+				52B085712C22A3EA00FD5FB8 /* bird-midFlap.png */,
+				52B085722C22A3EA00FD5FB8 /* bird-upflap.png */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -108,6 +123,12 @@
 				52997C1D2C0BB5C100B68BB1 /* main.cpp */,
 				522565752C1A83EE005C84DE /* Bird.cpp */,
 				522565762C1A83EE005C84DE /* Bird.hpp */,
+				52B0855C2C22470000FD5FB8 /* PhysicsBody.cpp */,
+				52B0855D2C22470000FD5FB8 /* PhysicsBody.hpp */,
+				52B085652C22479B00FD5FB8 /* Entity.cpp */,
+				52B085662C22479B00FD5FB8 /* Entity.hpp */,
+				52B0856C2C229FE600FD5FB8 /* Constants.cpp */,
+				52B0856D2C229FE600FD5FB8 /* Constants.hpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -236,7 +257,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5225657F2C1AA19E005C84DE /* bird.png in Resources */,
+				52B085742C22A3EA00FD5FB8 /* bird-midFlap.png in Resources */,
+				52B085752C22A3EA00FD5FB8 /* bird-upflap.png in Resources */,
+				52B085762C22A3EA00FD5FB8 /* bird-downFlap.png in Resources */,
 				52997C102C0BB58000B68BB1 /* Assets.xcassets in Resources */,
 				52997C2D2C0BB66E00B68BB1 /* Config.xcconfig in Resources */,
 				52997C132C0BB58000B68BB1 /* Base in Resources */,
@@ -250,6 +273,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52B085672C22479B00FD5FB8 /* Entity.cpp in Sources */,
+				52B0855E2C22470000FD5FB8 /* PhysicsBody.cpp in Sources */,
+				52B0856E2C229FE600FD5FB8 /* Constants.cpp in Sources */,
 				522565772C1A83EE005C84DE /* Bird.cpp in Sources */,
 				52997C1E2C0BB5C100B68BB1 /* main.cpp in Sources */,
 			);

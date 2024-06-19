@@ -11,19 +11,23 @@
 #include <stdio.h>
 #include <SDL3/SDL.h>
 #include <SDL3_image/SDL_image.h>
+#include "PhysicsBody.hpp"
 
-class Bird {
-    SDL_FRect frame;
+class Bird: PhysicsBody {;
     SDL_Texture *texture;
+    
+    /// Rotation of sprite in degrees
+    float rotation;
+    float flapStrength;
     
 public:
     Bird();
     
     /// Adds a positive velocity vector
     void addUpwardVelocity();
-    void setup(SDL_Window *window, SDL_Renderer *renderer);
-    void update();
-    void render(SDL_Renderer *renderer);
+    void setup(SDL_Window *window, SDL_Renderer *renderer) override;
+    void update() override;
+    void render(SDL_Renderer *renderer) override;
 };
 
 #endif /* Bird_hpp */
