@@ -16,11 +16,7 @@ void Bird::setup(SDL_Window *window, SDL_Renderer *renderer) {
     int width = 75, height = 75;
     
     
-    texture = IMG_LoadTexture(renderer, "bird.png");
-    if (texture == NULL) {
-        SDL_Log("Error loading texture: %s", SDL_GetError());
-        return;
-    }
+    texture = loadImage(renderer, "bird.png");
     
     frame = SDL_FRect();
     
