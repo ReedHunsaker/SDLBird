@@ -74,17 +74,11 @@ void update(void) {
 void render(void) {
     SDL_SetRenderDrawColor(renderer, 133, 43, 255, 0);
     SDL_RenderClear(renderer); //
-
-    background.render(renderer);
-    bird.render(renderer);
-    
-    SDL_RenderClear(renderer);
-    
+        
     std::list<Entity*>::iterator entity;
     for(entity = entities.begin(); entity != entities.end(); entity++) {
         (*entity)->render(renderer);
     }
-    
     
     SDL_RenderPresent(renderer); // Switches the back buffer with the screen to render it
 }
