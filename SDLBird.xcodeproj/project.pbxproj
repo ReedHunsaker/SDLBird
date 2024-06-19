@@ -16,13 +16,13 @@
 		52997C132C0BB58000B68BB1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 52997C122C0BB58000B68BB1 /* Base */; };
 		52997C1E2C0BB5C100B68BB1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52997C1D2C0BB5C100B68BB1 /* main.cpp */; };
 		52997C2D2C0BB66E00B68BB1 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 52997C2C2C0BB66E00B68BB1 /* Config.xcconfig */; };
+		52B0854F2C223DC100FD5FB8 /* ImageLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52B0854E2C223DC100FD5FB8 /* ImageLoader.cpp */; };
 		52B0855E2C22470000FD5FB8 /* PhysicsBody.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52B0855C2C22470000FD5FB8 /* PhysicsBody.cpp */; };
 		52B085672C22479B00FD5FB8 /* Entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52B085652C22479B00FD5FB8 /* Entity.cpp */; };
 		52B0856E2C229FE600FD5FB8 /* Constants.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52B0856C2C229FE600FD5FB8 /* Constants.cpp */; };
 		52B085742C22A3EA00FD5FB8 /* bird-midFlap.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B085712C22A3EA00FD5FB8 /* bird-midFlap.png */; };
-		52B085752C22A3EA00FD5FB8 /* bird-upflap.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B085722C22A3EA00FD5FB8 /* bird-upflap.png */; };
+		52B085752C22A3EA00FD5FB8 /* bird-upFlap.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B085722C22A3EA00FD5FB8 /* bird-upFlap.png */; };
 		52B085762C22A3EA00FD5FB8 /* bird-downFlap.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B085732C22A3EA00FD5FB8 /* bird-downFlap.png */; };
-		52B0854F2C223DC100FD5FB8 /* ImageLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52B0854E2C223DC100FD5FB8 /* ImageLoader.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +68,8 @@
 		52997C122C0BB58000B68BB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52997C1D2C0BB5C100B68BB1 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		52997C2C2C0BB66E00B68BB1 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		52B0854D2C223DC100FD5FB8 /* ImageLoader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ImageLoader.hpp; sourceTree = "<group>"; };
+		52B0854E2C223DC100FD5FB8 /* ImageLoader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ImageLoader.cpp; sourceTree = "<group>"; };
 		52B0855C2C22470000FD5FB8 /* PhysicsBody.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PhysicsBody.cpp; sourceTree = "<group>"; };
 		52B0855D2C22470000FD5FB8 /* PhysicsBody.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = PhysicsBody.hpp; sourceTree = "<group>"; };
 		52B085652C22479B00FD5FB8 /* Entity.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Entity.cpp; sourceTree = "<group>"; };
@@ -75,10 +77,8 @@
 		52B0856C2C229FE600FD5FB8 /* Constants.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Constants.cpp; sourceTree = "<group>"; };
 		52B0856D2C229FE600FD5FB8 /* Constants.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Constants.hpp; sourceTree = "<group>"; };
 		52B085712C22A3EA00FD5FB8 /* bird-midFlap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bird-midFlap.png"; sourceTree = "<group>"; };
-		52B085722C22A3EA00FD5FB8 /* bird-upflap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bird-upflap.png"; sourceTree = "<group>"; };
+		52B085722C22A3EA00FD5FB8 /* bird-upFlap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bird-upFlap.png"; sourceTree = "<group>"; };
 		52B085732C22A3EA00FD5FB8 /* bird-downFlap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bird-downFlap.png"; sourceTree = "<group>"; };
-		52B0854D2C223DC100FD5FB8 /* ImageLoader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ImageLoader.hpp; sourceTree = "<group>"; };
-		52B0854E2C223DC100FD5FB8 /* ImageLoader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ImageLoader.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +115,7 @@
 			children = (
 				52B085732C22A3EA00FD5FB8 /* bird-downFlap.png */,
 				52B085712C22A3EA00FD5FB8 /* bird-midFlap.png */,
-				52B085722C22A3EA00FD5FB8 /* bird-upflap.png */,
+				52B085722C22A3EA00FD5FB8 /* bird-upFlap.png */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -263,7 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				52B085742C22A3EA00FD5FB8 /* bird-midFlap.png in Resources */,
-				52B085752C22A3EA00FD5FB8 /* bird-upflap.png in Resources */,
+				52B085752C22A3EA00FD5FB8 /* bird-upFlap.png in Resources */,
 				52B085762C22A3EA00FD5FB8 /* bird-downFlap.png in Resources */,
 				52997C102C0BB58000B68BB1 /* Assets.xcassets in Resources */,
 				52997C2D2C0BB66E00B68BB1 /* Config.xcconfig in Resources */,

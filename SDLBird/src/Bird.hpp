@@ -13,13 +13,21 @@
 #include <SDL3_image/SDL_image.h>
 #include "PhysicsBody.hpp"
 #include "ImageLoader.hpp"
+#include "vector"
 
 class Bird: PhysicsBody {;
-    SDL_Texture *texture;
-    
+    std::vector<SDL_Texture*> textures;
+    int textureIndex;
+    float animationFPS;
+    float animationTickTime;
+    Uint64 animationTimer;
     /// Rotation of sprite in degrees
     float rotation;
     float flapStrength;
+    void (Bird::*animation)();
+    
+    void incrementAnimation();
+    void decrementAnimation();
     
 public:
     Bird();
