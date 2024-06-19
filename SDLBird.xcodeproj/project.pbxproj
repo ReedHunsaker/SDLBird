@@ -22,6 +22,7 @@
 		52B085742C22A3EA00FD5FB8 /* bird-midFlap.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B085712C22A3EA00FD5FB8 /* bird-midFlap.png */; };
 		52B085752C22A3EA00FD5FB8 /* bird-upflap.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B085722C22A3EA00FD5FB8 /* bird-upflap.png */; };
 		52B085762C22A3EA00FD5FB8 /* bird-downFlap.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B085732C22A3EA00FD5FB8 /* bird-downFlap.png */; };
+		52B0854F2C223DC100FD5FB8 /* ImageLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52B0854E2C223DC100FD5FB8 /* ImageLoader.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,8 @@
 		52B085712C22A3EA00FD5FB8 /* bird-midFlap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bird-midFlap.png"; sourceTree = "<group>"; };
 		52B085722C22A3EA00FD5FB8 /* bird-upflap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bird-upflap.png"; sourceTree = "<group>"; };
 		52B085732C22A3EA00FD5FB8 /* bird-downFlap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bird-downFlap.png"; sourceTree = "<group>"; };
+		52B0854D2C223DC100FD5FB8 /* ImageLoader.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ImageLoader.hpp; sourceTree = "<group>"; };
+		52B0854E2C223DC100FD5FB8 /* ImageLoader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ImageLoader.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +132,8 @@
 				52B085662C22479B00FD5FB8 /* Entity.hpp */,
 				52B0856C2C229FE600FD5FB8 /* Constants.cpp */,
 				52B0856D2C229FE600FD5FB8 /* Constants.hpp */,
+				52B0854D2C223DC100FD5FB8 /* ImageLoader.hpp */,
+				52B0854E2C223DC100FD5FB8 /* ImageLoader.cpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -277,6 +282,7 @@
 				52B0855E2C22470000FD5FB8 /* PhysicsBody.cpp in Sources */,
 				52B0856E2C229FE600FD5FB8 /* Constants.cpp in Sources */,
 				522565772C1A83EE005C84DE /* Bird.cpp in Sources */,
+				52B0854F2C223DC100FD5FB8 /* ImageLoader.cpp in Sources */,
 				52997C1E2C0BB5C100B68BB1 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,6 +12,7 @@
 #include <SDL3/SDL.h>
 #include <SDL3_image/SDL_image.h>
 #include "PhysicsBody.hpp"
+#include "ImageLoader.hpp"
 
 class Bird: PhysicsBody {;
     SDL_Texture *texture;
