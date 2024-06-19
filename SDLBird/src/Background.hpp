@@ -14,7 +14,7 @@
 #include "ImageLoader.hpp"
 #include "Entity.hpp"
 
-class Background: Entity {
+class Background: public Entity {
     SDL_FRect frame1;
     SDL_FRect frame2;
     SDL_Texture *texture;

@@ -16,6 +16,9 @@ SDL_Renderer *renderer;
 Background background = Background();
 Bird bird = Bird();
 
+Background *pBackground = &background;
+Bird *pBird = &bird;
+
 int gameIsRunning;
 
 int createWindow(void) {
@@ -36,6 +39,9 @@ int createWindow(void) {
         SDL_Log("Error setting up renderer: %s", SDL_GetError());
         return 0;
     }
+    
+    entities.push_back(pBackground);
+    entities.push_back(pBird);
     
     return 1;
 }

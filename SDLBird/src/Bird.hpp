@@ -15,7 +15,7 @@
 #include "ImageLoader.hpp"
 #include "vector"
 
-class Bird: PhysicsBody {;
+class Bird: public PhysicsBody {;
     std::vector<SDL_Texture*> textures;
     int textureIndex;
     float animationFPS;
