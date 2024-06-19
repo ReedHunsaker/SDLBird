@@ -13,13 +13,8 @@ void Background::setup(SDL_Window *window, SDL_Renderer *renderer) {
     int windowWidth = 0;
     int windowHeight = 0;
     int *x = &windowWidth, *y = &windowHeight;
-    int width = 680, height = 480;
-
-    texture = IMG_LoadTexture(renderer, "C:\\Users\\joshu\\Desktop\\Birdie\\SDLBird\\SDLBird\\resources\\background.png");
-    if (texture == NULL) {
-        SDL_Log("Error loading texture: %s", SDL_GetError());
-        return;
-    }
+    
+    texture = getBackgroundTexture(renderer);
 
     if (SDL_GetWindowSize(window, x, y) != 0) {
         SDL_Log("Error getting window size: %s", SDL_GetError());
@@ -30,13 +25,13 @@ void Background::setup(SDL_Window *window, SDL_Renderer *renderer) {
     frame1 = SDL_FRect();
     frame2 = SDL_FRect();
     
-    frame1.h = frame2.h = height;
-    frame1.w = frame2.w = width;
+    frame1.h = frame2.h = (float) *y;
+    frame1.w = frame2.w = (float) *x;
 
     // Set the initial positions
     frame1.x = 0;
     frame1.y = 0;
-    frame2.x = width; // frame2 starts right after frame1
+    frame2.x = (float) *x; // frame2 starts right after frame1
     frame2.y = 0;
 }
 
@@ -62,4 +57,13 @@ void Background::render(SDL_Renderer *renderer) {
         SDL_Log("Error drawing texture (frame2): %s", SDL_GetError());
         return;
     }
+}
+
+SDL_Texture *Background::getBackgroundTexture(SDL_Renderer *renderer) {
+#ifdef __APPLE__
+    return IMG_LoadTexture(renderer, "backgroundPortrait.png");
+#endif
+#ifdef _WIN32
+    return IMG_LoadTexture(renderer, "backgroundLandscape.png");
+#endif
 }

@@ -13,14 +13,10 @@
 
 SDL_Window *window;
 SDL_Renderer *renderer;
-Bird bird = Bird();
 Background background = Background();
+Bird bird = Bird();
 
 int gameIsRunning;
-Uint64 lastFrameTime = 0;
-
-#define FPS 60
-#define FRAME_TARGET_TIME (1000 / FPS)
 
 int createWindow(void) {
     if (SDL_Init(SDL_INIT_VIDEO|SDL_INIT_AUDIO) != 0) {
@@ -45,8 +41,10 @@ int createWindow(void) {
 }
 
 void setup(void) {
-    bird.setup(window, renderer);
-    background.setup(window, renderer);
+    std::list<Entity*>::iterator entity;
+    for(entity = entities.begin(); entity != entities.end(); entity++) {
+        (*entity)->setup(window, renderer);
+    }
 }
 
 /// Polls for user input and fires associated events
@@ -66,11 +64,11 @@ void pollInput(void) {
 
 void update(void) {
     // Delays a set amount of time before continuing to render (standardizes FPS)
-    SDL_Delay((Uint32) FRAME_TARGET_TIME);
-    lastFrameTime = SDL_GetTicks();
-    background.update();
-    bird.update();
-    
+    SDL_Delay((Uint32) Constants::frameTargetTime);
+    std::list<Entity*>::iterator entity;
+    for(entity = entities.begin(); entity != entities.end(); entity++) {
+        (*entity)->update();
+    }
 }
 
 void render(void) {
@@ -79,6 +77,13 @@ void render(void) {
 
     background.render(renderer);
     bird.render(renderer);
+    
+    SDL_RenderClear(renderer);
+    
+    std::list<Entity*>::iterator entity;
+    for(entity = entities.begin(); entity != entities.end(); entity++) {
+        (*entity)->render(renderer);
+    }
     
     
     SDL_RenderPresent(renderer); // Switches the back buffer with the screen to render it
