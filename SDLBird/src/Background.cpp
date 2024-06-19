@@ -61,9 +61,9 @@ void Background::render(SDL_Renderer *renderer) {
 
 SDL_Texture *Background::getBackgroundTexture(SDL_Renderer *renderer) {
 #ifdef __APPLE__
-    return IMG_LoadTexture(renderer, "backgroundPortrait.png");
+    return loadImage(renderer, "backgroundPortrait.png");
 #endif
 #ifdef _WIN32
-    return IMG_LoadTexture(renderer, "backgroundLandscape.png");
+    return loadImage(renderer, "backgroundLandscape.png");
 #endif
 }
