@@ -13,8 +13,11 @@ SDL_Texture *loadImage(SDL_Renderer *renderer, const char *file) {
 #ifdef __APPLE__
     SDL_Texture *texture = IMG_LoadTexture(renderer, file);
 #endif
-#ifdef __MINGW32__
-    SDL_Texture *texture = IMG_LoadTexture(renderer, strcat(WINDOWS_PATH, file));
+#ifdef _WIN32
+    char fullPath[256];
+    strcpy(fullPath, WINDOWS_PATH);
+    strcat(fullPath, file);
+    SDL_Texture *texture = IMG_LoadTexture(renderer, fullPath);
 #endif
     if (texture == NULL) {
         SDL_Log("Error loading texture from file %s with error %s", file, SDL_GetError());
