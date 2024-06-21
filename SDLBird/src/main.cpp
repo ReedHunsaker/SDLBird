@@ -10,14 +10,18 @@
 #include <SDL3_image/SDL_image.h>
 #include "Bird.hpp"
 #include "Background.hpp"
+#include "Collisions.hpp"
 
 SDL_Window *window;
 SDL_Renderer *renderer;
 Background background = Background();
 Bird bird = Bird();
+Collisions collisions = Collisions();
 
 Background *pBackground = &background;
 Bird *pBird = &bird;
+Collisions *pCollisions = &collisions;
+
 
 int gameIsRunning;
 
@@ -42,6 +46,9 @@ int createWindow(void) {
     
     entities.push_back(pBackground);
     entities.push_back(pBird);
+    entities.push_back(pCollisions);
+
+
     
     return 1;
 }
@@ -51,6 +58,10 @@ void setup(void) {
     for(entity = entities.begin(); entity != entities.end(); entity++) {
         (*entity)->setup(window, renderer);
     }
+    collisions.addCollisionBox("birdCollisionBox", bird.frame);
+
+    
+
 }
 
 /// Polls for user input and fires associated events
@@ -75,6 +86,8 @@ void update(void) {
     for(entity = entities.begin(); entity != entities.end(); entity++) {
         (*entity)->update();
     }
+    collisions.updateCollisionBoxPosition("birdCollisionBox", bird.frame.x, bird.frame.y);
+
 }
 
 void render(void) {

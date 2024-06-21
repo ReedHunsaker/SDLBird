@@ -44,6 +44,7 @@ void Bird::setup(SDL_Window *window, SDL_Renderer *renderer) {
     frame.y = (*y * 0.5) - midWidth;
     
     flapStrength = -300;
+
 }
 
 void Bird::update() {
