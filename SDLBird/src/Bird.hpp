@@ -14,7 +14,6 @@
 #include "PhysicsBody.hpp"
 #include "ImageLoader.hpp"
 #include "vector"
-#include "Collisions.hpp"
 
 class Bird: public PhysicsBody {;
     std::vector<SDL_Texture*> textures;
@@ -26,13 +25,11 @@ class Bird: public PhysicsBody {;
     float rotation;
     float flapStrength;
     void (Bird::*animation)();
+
     
     void incrementAnimation();
     void decrementAnimation();
 
-    Collisions collisions;
-    SDL_FRect collisionBox;
-    
 public:
     Bird();
     

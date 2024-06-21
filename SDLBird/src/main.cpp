@@ -86,7 +86,16 @@ void update(void) {
     for(entity = entities.begin(); entity != entities.end(); entity++) {
         (*entity)->update();
     }
+
+    /* This all should be in bird.cpp at some point but it doesn't load correctly when it is */
     collisions.updateCollisionBoxPosition("birdCollisionBox", bird.frame.x, bird.frame.y);
+    if(collisions.checkObjectCollision("birdCollisionBox") == "ceilingCollisionBox"){
+       bird.frame.y = collisions.collisionBoxes["ceilingCollisionBox"].y + bird.frame.h;
+    }
+    if(collisions.checkObjectCollision("birdCollisionBox") == "groundCollisionBox"){
+        bird.frame.y = collisions.collisionBoxes["groundCollisionBox"].y - (bird.frame.h);
+        //eventually move groundcollisionbox down a ways and if they fly into it end the game.
+    }
 
 }
 

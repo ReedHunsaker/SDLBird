@@ -16,14 +16,16 @@
 class Collisions: public Entity {
     
 
-    std::unordered_map<std::string, SDL_FRect> collisionBoxes;
+    
 
 public:
+    std::unordered_map<std::string, SDL_FRect> collisionBoxes;
     Collisions();
 
     SDL_FRect createCollisionBox(float x, float y, float w, float h);
     void addCollisionBox(std::string obj_tag, const SDL_FRect& box);
     bool checkCollisions() const;
+    std::string checkObjectCollision(std::string obj_tag);
     void updateCollisionBoxPosition(const std::string& obj_tag, float new_x, float new_y);
 
     void setup(SDL_Window* window, SDL_Renderer* renderer);
@@ -33,7 +35,7 @@ public:
     private:
         SDL_FRect groundCollisionBox;
         SDL_FRect ceilingCollisionBox;
-        bool renderCollisionBoxes = true;
+        bool renderCollisionBoxes = false;
 
 };
 

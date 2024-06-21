@@ -28,12 +28,26 @@ bool Collisions::checkCollisions() const {
     for (auto it1 = collisionBoxes.begin(); it1 != collisionBoxes.end(); ++it1) {
         for (auto it2 = std::next(it1); it2 != collisionBoxes.end(); ++it2) {
             if (SDL_HasRectIntersectionFloat(&(it1->second), &(it2->second))) {
-                std::cout << "Collision between " << it1->first << " and " << it2->first << std::endl;
+                // std::cout << "Collision between " << it1->first << " and " << it2->first << std::endl;
                 return true;
             }
         }
     }
     return false;
+}
+
+std::string Collisions::checkObjectCollision(std::string obj_tag) {
+    if (!obj_tag.empty()) {
+        for (auto it = collisionBoxes.begin(); it != collisionBoxes.end(); ++it){
+            if(it->first != obj_tag){
+                if(SDL_HasRectIntersectionFloat(&collisionBoxes[obj_tag], &it->second)){
+                    std::cout << "Collision between " << obj_tag << " and " << it->first << std::endl;
+                    return it->first;
+                }
+            }
+        }
+    }
+    return "";
 }
 
 void Collisions::updateCollisionBoxPosition(const std::string& obj_tag, float new_x, float new_y) {
@@ -50,8 +64,8 @@ void Collisions::setup(SDL_Window* window, SDL_Renderer* renderer) {
     int windowWidth, windowHeight;
     SDL_GetWindowSize(window, &windowWidth, &windowHeight);
 
-    groundCollisionBox = createCollisionBox(0.0f, static_cast<float>(windowHeight - 5), static_cast<float>(windowWidth), 5.0f);
-    ceilingCollisionBox = createCollisionBox(0.0f, 0.0f, static_cast<float>(windowWidth), 5.0f);
+    groundCollisionBox = createCollisionBox(0.0f, static_cast<float>(windowHeight + 5), static_cast<float>(windowWidth), 5.0f);
+    ceilingCollisionBox = createCollisionBox(0.0f, -50.0f, static_cast<float>(windowWidth), 5.0f);
 
     addCollisionBox("groundCollisionBox", groundCollisionBox);
     addCollisionBox("ceilingCollisionBox", ceilingCollisionBox);
