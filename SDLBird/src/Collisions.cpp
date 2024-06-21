@@ -37,7 +37,7 @@ bool Collisions::checkCollisions() const {
 }
 
 void Collisions::updateCollisionBoxPosition(const std::string& obj_tag, float new_x, float new_y) {
-    std::cout << obj_tag << " " << new_x << " " << new_y << std::endl;
+    // std::cout << obj_tag << " " << new_x << " " << new_y << std::endl;
     // if (collisionBoxes.count(obj_tag)) {
         collisionBoxes[obj_tag].x = new_x;
         collisionBoxes[obj_tag].y = new_y;
