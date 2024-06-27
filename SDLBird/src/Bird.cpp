@@ -49,6 +49,7 @@ void Bird::setup(SDL_Window *window, SDL_Renderer *renderer) {
 
 void Bird::update() {
     PhysicsBody::update();
+
     
     Uint64 elapsedTime = SDL_GetTicks() - animationTimer;
     if (elapsedTime > animationTickTime) {

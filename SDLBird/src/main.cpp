@@ -54,11 +54,17 @@ int createWindow(void) {
 }
 
 void setup(void) {
-    std::list<Entity*>::iterator entity;
-    for(entity = entities.begin(); entity != entities.end(); entity++) {
-        (*entity)->setup(window, renderer);
-    }
+    // std::list<Entity*>::iterator entity;
+    // for(entity = entities.begin(); entity != entities.end(); entity++) {
+    //     (*entity)->setup(window, renderer);
+    // }
+    collisions.setup(window, renderer);
+    background.setup(window, renderer);
+    bird.setup(window, renderer);
+
     collisions.addCollisionBox("birdCollisionBox", bird.frame);
+
+
 
     
 
@@ -82,12 +88,16 @@ void pollInput(void) {
 void update(void) {
     // Delays a set amount of time before continuing to render (standardizes FPS)
     SDL_Delay((Uint32) Constants::frameTargetTime);
-    std::list<Entity*>::iterator entity;
-    for(entity = entities.begin(); entity != entities.end(); entity++) {
-        (*entity)->update();
-    }
+    // std::list<Entity*>::iterator entity;
+    // for(entity = entities.begin(); entity != entities.end(); entity++) {
+    //     (*entity)->update();
+    // }
+    collisions.update();
+    background.update();
+    bird.update();
 
-    /* This all should be in bird.cpp at some point but it doesn't load correctly when it is */
+
+//     /* This all should be in bird.cpp at some point but it doesn't load correctly when it is */
     collisions.updateCollisionBoxPosition("birdCollisionBox", bird.frame.x, bird.frame.y);
     if(collisions.checkObjectCollision("birdCollisionBox") == "ceilingCollisionBox"){
        bird.frame.y = collisions.collisionBoxes["ceilingCollisionBox"].y + bird.frame.h;
@@ -96,17 +106,22 @@ void update(void) {
         bird.frame.y = collisions.collisionBoxes["groundCollisionBox"].y - (bird.frame.h);
         //eventually move groundcollisionbox down a ways and if they fly into it end the game.
     }
-
 }
 
 void render(void) {
     SDL_SetRenderDrawColor(renderer, 133, 43, 255, 0);
     SDL_RenderClear(renderer); //
         
-    std::list<Entity*>::iterator entity;
-    for(entity = entities.begin(); entity != entities.end(); entity++) {
-        (*entity)->render(renderer);
-    }
+    // std::list<Entity*>::iterator entity;
+    // for(entity = entities.begin(); entity != entities.end(); entity++) {
+    //     (*entity)->render(renderer);
+    // }
+
+    background.render(renderer);
+    bird.render(renderer);
+    collisions.render(renderer);
+
+
     
     SDL_RenderPresent(renderer); // Switches the back buffer with the screen to render it
 }
