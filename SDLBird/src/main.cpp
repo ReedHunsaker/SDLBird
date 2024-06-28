@@ -10,14 +10,10 @@
 #include <SDL3_image/SDL_image.h>
 #include "Bird.hpp"
 #include "Background.hpp"
+#include "MainScene.hpp"
 
 SDL_Window *window;
 SDL_Renderer *renderer;
-Background background = Background();
-Bird bird = Bird();
-
-Background *pBackground = &background;
-Bird *pBird = &bird;
 
 int gameIsRunning;
 
@@ -39,22 +35,16 @@ int createWindow(void) {
         SDL_Log("Error setting up renderer: %s", SDL_GetError());
         return 0;
     }
-    
-    entities.push_back(pBackground);
-    entities.push_back(pBird);
-    
+        
     return 1;
 }
 
-void setup(void) {
-    std::list<Entity*>::iterator entity;
-    for(entity = entities.begin(); entity != entities.end(); entity++) {
-        (*entity)->setup(window, renderer);
-    }
+void setup(Scene *scene) {
+    scene->setup();
 }
 
 /// Polls for user input and fires associated events
-void pollInput(void) {
+void pollInput(Scene *scene) {
     SDL_Event event;
     SDL_PollEvent(&event);
     
@@ -62,29 +52,21 @@ void pollInput(void) {
         case SDL_EVENT_QUIT:
             gameIsRunning = 0;
             break;
-        case SDL_EVENT_KEY_DOWN: case SDL_EVENT_FINGER_DOWN:
-            bird.addUpwardVelocity();
-            break;
     }
+    scene->input(event.type);
 }
 
-void update(void) {
+void update(Scene *scene) {
     // Delays a set amount of time before continuing to render (standardizes FPS)
     SDL_Delay((Uint32) Constants::frameTargetTime);
-    std::list<Entity*>::iterator entity;
-    for(entity = entities.begin(); entity != entities.end(); entity++) {
-        (*entity)->update();
-    }
+    scene->update();
 }
 
-void render(void) {
+void render(Scene *scene) {
     SDL_SetRenderDrawColor(renderer, 133, 43, 255, 0);
-    SDL_RenderClear(renderer); //
+    SDL_RenderClear(renderer);
         
-    std::list<Entity*>::iterator entity;
-    for(entity = entities.begin(); entity != entities.end(); entity++) {
-        (*entity)->render(renderer);
-    }
+    scene->render();
     
     SDL_RenderPresent(renderer); // Switches the back buffer with the screen to render it
 }
@@ -97,12 +79,13 @@ void destroy(void) {
 int main(int argc, char *argv[]) {
     
     gameIsRunning = createWindow();
-    setup();
+    Scene scene = MainScene(window, renderer);
+    setup(&scene);
     
     while (gameIsRunning) {
-        pollInput();
-        update();
-        render();
+        pollInput(&scene);
+        update(&scene);
+        render(&scene);
     }
     
     destroy();

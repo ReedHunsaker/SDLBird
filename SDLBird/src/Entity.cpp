@@ -7,9 +7,4 @@
 
 #include "Entity.hpp"
 
-std::list<Entity*> entities;
-
-Entity::Entity() {
-    // Registers an entity
-//    entities.push_back(this);
-}
+Entity::Entity() {}
