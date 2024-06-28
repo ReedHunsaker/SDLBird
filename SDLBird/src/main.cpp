@@ -9,15 +9,18 @@
 #include <SDL3/SDL_main.h>
 #include <SDL3_image/SDL_image.h>
 #include "Bird.hpp"
+#include "Pipes.hpp"
 #include "Background.hpp"
 
 SDL_Window *window;
 SDL_Renderer *renderer;
 Background background = Background();
 Bird bird = Bird();
+Pipes pipes = Pipes();
 
 Background *pBackground = &background;
 Bird *pBird = &bird;
+Pipes *pPipes = &pipes;
 
 int gameIsRunning;
 
@@ -42,6 +45,7 @@ int createWindow(void) {
     
     entities.push_back(pBackground);
     entities.push_back(pBird);
+    entities.push_back(pPipes);
     
     return 1;
 }
@@ -64,6 +68,7 @@ void pollInput(void) {
             break;
         case SDL_EVENT_KEY_DOWN: case SDL_EVENT_FINGER_DOWN:
             bird.addUpwardVelocity();
+            pipes.start();
             break;
     }
 }
