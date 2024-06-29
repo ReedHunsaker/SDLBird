@@ -9,13 +9,17 @@
 #define MainScene_hpp
 
 #include <stdio.h>
+#include <list>
 #include "Bird.hpp"
 #include "Background.hpp"
 #include "Scene.hpp"
+#include "Pipes.hpp"
 
 class MainScene: public Scene {
     Background background;
     Bird bird;
+    Pipes pipeOne;
+    Pipes pipeTwo;
 public:
     MainScene(SDL_Window *window, SDL_Renderer *renderer);
 };

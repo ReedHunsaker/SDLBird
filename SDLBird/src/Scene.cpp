@@ -10,10 +10,16 @@
 Scene::Scene(SDL_Window *window, SDL_Renderer *renderer) {
     this->window = window;
     this->renderer = renderer;
+    hasRanSetup = false;
 }
 
 void Scene::addEntity(Entity *entity) {
     entities.push_back(entity);
+    
+    // Sets up the entity if the window has already been set up
+    if (hasRanSetup) {
+        entity->setup(window, renderer);
+    }
 }
 
 void Scene::removeEntity(Entity *entity) {
@@ -25,6 +31,7 @@ void Scene::setup() {
     forEachEntity([this](Entity* entity) {
         entity->setup(window, renderer);
     });
+    hasRanSetup = true;
 }
 
 void Scene::input(Uint32 eventType) {

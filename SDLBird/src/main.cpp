@@ -8,8 +8,6 @@
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
 #include <SDL3_image/SDL_image.h>
-#include "Bird.hpp"
-#include "Background.hpp"
 #include "MainScene.hpp"
 
 SDL_Window *window;
@@ -63,9 +61,6 @@ void update(Scene *scene) {
 }
 
 void render(Scene *scene) {
-    SDL_SetRenderDrawColor(renderer, 133, 43, 255, 0);
-    SDL_RenderClear(renderer);
-        
     scene->render();
     
     SDL_RenderPresent(renderer); // Switches the back buffer with the screen to render it

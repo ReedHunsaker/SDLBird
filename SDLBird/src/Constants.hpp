@@ -9,6 +9,7 @@
 #define Constants_hpp
 
 #include <stdio.h>
+#include <random>
 
 namespace Constants {
     extern const float FPS;
@@ -17,6 +18,9 @@ namespace Constants {
 
     /// tick time in milliseconds
     extern float frameTargetTime;
+
+    /// Generates a random float that is between two numbers
+    float randFloat(float max, float min);
 }
 
 
