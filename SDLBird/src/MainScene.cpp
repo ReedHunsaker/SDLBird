@@ -26,13 +26,4 @@ MainScene::MainScene(SDL_Window *window, SDL_Renderer *renderer): Scene(window, 
     this->addEntity(&bird);
     this->addEntity(&pipeOne);
     this->addEntity(&pipeTwo);
-    
-//    int i;
-//    for (i = 0; i < 3; i ++) {
-//        Pipes pipe = Pipes();
-//        float pipeGap = 40;
-//        pipe.setSpawnOffset(i * pipeGap);
-//        pipesBuffer.push_back(pipe);
-//        this->addEntity(&pipe);
-//    }
 }
