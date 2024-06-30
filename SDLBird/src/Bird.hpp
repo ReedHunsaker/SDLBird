@@ -15,12 +15,13 @@
 #include "ImageLoader.hpp"
 #include "vector"
 
-class Bird: public PhysicsBody {;
+class Bird: public Entity {;
     std::vector<SDL_Texture*> textures;
     int textureIndex;
     float animationFPS;
     float animationTickTime;
     Uint64 animationTimer;
+    PhysicsBody physicsBody;
     /// Rotation of sprite in degrees
     float rotation;
     float flapStrength;
@@ -35,6 +36,7 @@ public:
     /// Adds a positive velocity vector
     void addUpwardVelocity();
     void setup(SDL_Window *window, SDL_Renderer *renderer) override;
+    void input(Uint32 eventType) override;
     void update() override;
     void render(SDL_Renderer *renderer) override;
 };

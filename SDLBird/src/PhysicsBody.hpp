@@ -20,14 +20,14 @@ struct Vector {
 };
 
 /// A type of entity that has physics applied including gravity
-class PhysicsBody: public Entity {
+class PhysicsBody {
     Vector velocity;
     bool isEnabled;
     float gravityAcceleration; // 500 points per second
     
 public:
     PhysicsBody();
-    void update() override;
+    void update(SDL_FRect *frame);
     void setVelocity(Vector newVelocity);
     
     void setEnablePhysics(bool isEnabled);

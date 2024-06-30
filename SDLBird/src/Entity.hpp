@@ -9,7 +9,6 @@
 #define Entity_hpp
 
 #include <stdio.h>
-#include <list>
 #include <SDL3/SDL.h>
 #include <SDL3_image/SDL_image.h>
 
@@ -22,10 +21,9 @@ protected:
 public:
     SDL_FRect frame;
     virtual void setup(SDL_Window *window, SDL_Renderer *renderer) = 0;
+    virtual void input(Uint32 eventType) = 0;
     virtual void update() = 0;
     virtual void render(SDL_Renderer *renderer) = 0;
 };
-
-extern std::list<Entity*> entities;
 
 #endif /* Entity_hpp */
