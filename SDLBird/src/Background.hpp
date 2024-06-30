@@ -28,6 +28,7 @@ public:
     /// Adds a positive velocity vector
     void setup(SDL_Window *window, SDL_Renderer *renderer) override;
     void update() override;
+    void input(Uint32 eventType) override {};
     void render(SDL_Renderer *renderer) override;
 };
 

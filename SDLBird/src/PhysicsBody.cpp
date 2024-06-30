@@ -16,13 +16,13 @@ PhysicsBody::PhysicsBody() {
     gravityAcceleration = 500.0;
 }
 
-void PhysicsBody::update() {
+void PhysicsBody::update(SDL_FRect *frame) {
     if (!isEnabled) { return; }
     
     // apply the velocity to the position
     velocity.y += gravityAcceleration * Constants::tickTimeSeconds;
-    frame.y += velocity.y * Constants::tickTimeSeconds;
-    frame.x += velocity.x;
+    frame->y += velocity.y * Constants::tickTimeSeconds;
+    frame->x += velocity.x;
 }
 
 void PhysicsBody::setVelocity(Vector newVelocity) {

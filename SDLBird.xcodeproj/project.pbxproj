@@ -26,6 +26,8 @@
 		52B085742C22A3EA00FD5FB8 /* bird-midFlap.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B085712C22A3EA00FD5FB8 /* bird-midFlap.png */; };
 		52B085752C22A3EA00FD5FB8 /* bird-upFlap.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B085722C22A3EA00FD5FB8 /* bird-upFlap.png */; };
 		52B085762C22A3EA00FD5FB8 /* bird-downFlap.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B085732C22A3EA00FD5FB8 /* bird-downFlap.png */; };
+		52F814722C2E4F6200A719CF /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52F814702C2E4F6200A719CF /* Scene.cpp */; };
+		52F814752C2E6CD800A719CF /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52F814732C2E6CD800A719CF /* MainScene.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,10 @@
 		52B085712C22A3EA00FD5FB8 /* bird-midFlap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bird-midFlap.png"; sourceTree = "<group>"; };
 		52B085722C22A3EA00FD5FB8 /* bird-upFlap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bird-upFlap.png"; sourceTree = "<group>"; };
 		52B085732C22A3EA00FD5FB8 /* bird-downFlap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bird-downFlap.png"; sourceTree = "<group>"; };
+		52F814702C2E4F6200A719CF /* Scene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
+		52F814712C2E4F6200A719CF /* Scene.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Scene.hpp; sourceTree = "<group>"; };
+		52F814732C2E6CD800A719CF /* MainScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MainScene.cpp; sourceTree = "<group>"; };
+		52F814742C2E6CD800A719CF /* MainScene.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MainScene.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +151,10 @@
 				52B0856D2C229FE600FD5FB8 /* Constants.hpp */,
 				52B0854D2C223DC100FD5FB8 /* ImageLoader.hpp */,
 				52B0854E2C223DC100FD5FB8 /* ImageLoader.cpp */,
+				52F814702C2E4F6200A719CF /* Scene.cpp */,
+				52F814712C2E4F6200A719CF /* Scene.hpp */,
+				52F814732C2E6CD800A719CF /* MainScene.cpp */,
+				52F814742C2E6CD800A719CF /* MainScene.hpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -292,10 +302,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				52B085672C22479B00FD5FB8 /* Entity.cpp in Sources */,
+				52F814752C2E6CD800A719CF /* MainScene.cpp in Sources */,
 				52B0855E2C22470000FD5FB8 /* PhysicsBody.cpp in Sources */,
 				52B0856E2C229FE600FD5FB8 /* Constants.cpp in Sources */,
 				522565772C1A83EE005C84DE /* Bird.cpp in Sources */,
 				52B0854F2C223DC100FD5FB8 /* ImageLoader.cpp in Sources */,
+				52F814722C2E4F6200A719CF /* Scene.cpp in Sources */,
 				52997C1E2C0BB5C100B68BB1 /* main.cpp in Sources */,
 				5214B0872C232BB600AFB469 /* Background.cpp in Sources */,
 			);

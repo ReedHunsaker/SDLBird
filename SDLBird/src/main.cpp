@@ -10,18 +10,10 @@
 #include <SDL3_image/SDL_image.h>
 #include "Bird.hpp"
 #include "Background.hpp"
-#include "Collisions.hpp"
+#include "MainScene.hpp"
 
 SDL_Window *window;
 SDL_Renderer *renderer;
-Background background = Background();
-Bird bird = Bird();
-Collisions collisions = Collisions();
-
-Background *pBackground = &background;
-Bird *pBird = &bird;
-Collisions *pCollisions = &collisions;
-
 
 int gameIsRunning;
 
@@ -43,35 +35,16 @@ int createWindow(void) {
         SDL_Log("Error setting up renderer: %s", SDL_GetError());
         return 0;
     }
-    
-    entities.push_back(pBackground);
-    entities.push_back(pBird);
-    entities.push_back(pCollisions);
-
-
-    
+        
     return 1;
 }
 
-void setup(void) {
-    // std::list<Entity*>::iterator entity;
-    // for(entity = entities.begin(); entity != entities.end(); entity++) {
-    //     (*entity)->setup(window, renderer);
-    // }
-    collisions.setup(window, renderer);
-    background.setup(window, renderer);
-    bird.setup(window, renderer);
-
-    collisions.addCollisionBox("birdCollisionBox", bird.frame);
-
-
-
-    
-
+void setup(Scene *scene) {
+    scene->setup();
 }
 
 /// Polls for user input and fires associated events
-void pollInput(void) {
+void pollInput(Scene *scene) {
     SDL_Event event;
     SDL_PollEvent(&event);
     
@@ -79,49 +52,21 @@ void pollInput(void) {
         case SDL_EVENT_QUIT:
             gameIsRunning = 0;
             break;
-        case SDL_EVENT_KEY_DOWN: case SDL_EVENT_FINGER_DOWN:
-            bird.addUpwardVelocity();
-            break;
     }
+    scene->input(event.type);
 }
 
-void update(void) {
+void update(Scene *scene) {
     // Delays a set amount of time before continuing to render (standardizes FPS)
     SDL_Delay((Uint32) Constants::frameTargetTime);
-    // std::list<Entity*>::iterator entity;
-    // for(entity = entities.begin(); entity != entities.end(); entity++) {
-    //     (*entity)->update();
-    // }
-    collisions.update();
-    background.update();
-    bird.update();
-
-
-//     /* This all should be in bird.cpp at some point but it doesn't load correctly when it is */
-    collisions.updateCollisionBoxPosition("birdCollisionBox", bird.frame.x, bird.frame.y);
-    if(collisions.checkObjectCollision("birdCollisionBox") == "ceilingCollisionBox"){
-       bird.frame.y = collisions.collisionBoxes["ceilingCollisionBox"].y + bird.frame.h;
-    }
-    if(collisions.checkObjectCollision("birdCollisionBox") == "groundCollisionBox"){
-        bird.frame.y = collisions.collisionBoxes["groundCollisionBox"].y - (bird.frame.h);
-        //eventually move groundcollisionbox down a ways and if they fly into it end the game.
-    }
+    scene->update();
 }
 
-void render(void) {
+void render(Scene *scene) {
     SDL_SetRenderDrawColor(renderer, 133, 43, 255, 0);
-    SDL_RenderClear(renderer); //
+    SDL_RenderClear(renderer);
         
-    // std::list<Entity*>::iterator entity;
-    // for(entity = entities.begin(); entity != entities.end(); entity++) {
-    //     (*entity)->render(renderer);
-    // }
-
-    background.render(renderer);
-    bird.render(renderer);
-    collisions.render(renderer);
-
-
+    scene->render();
     
     SDL_RenderPresent(renderer); // Switches the back buffer with the screen to render it
 }
@@ -134,12 +79,13 @@ void destroy(void) {
 int main(int argc, char *argv[]) {
     
     gameIsRunning = createWindow();
-    setup();
+    Scene scene = MainScene(window, renderer);
+    setup(&scene);
     
     while (gameIsRunning) {
-        pollInput();
-        update();
-        render();
+        pollInput(&scene);
+        update(&scene);
+        render(&scene);
     }
     
     destroy();

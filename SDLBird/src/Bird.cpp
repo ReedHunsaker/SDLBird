@@ -7,7 +7,9 @@
 
 #include "Bird.hpp"
 
-Bird::Bird() {}
+Bird::Bird() {
+    physicsBody = PhysicsBody();
+}
     
 void Bird::setup(SDL_Window *window, SDL_Renderer *renderer) {
     int windowWidth = 0;
@@ -44,12 +46,18 @@ void Bird::setup(SDL_Window *window, SDL_Renderer *renderer) {
     frame.y = (*y * 0.5) - midWidth;
     
     flapStrength = -300;
+}
 
+void Bird::input(Uint32 eventType) {
+    switch (eventType) {
+        case SDL_EVENT_KEY_DOWN: case SDL_EVENT_FINGER_DOWN:
+            addUpwardVelocity();
+            break;
+    }
 }
 
 void Bird::update() {
-    PhysicsBody::update();
-
+    physicsBody.update(&frame);
     
     Uint64 elapsedTime = SDL_GetTicks() - animationTimer;
     if (elapsedTime > animationTickTime) {
@@ -66,12 +74,12 @@ void Bird::render(SDL_Renderer *renderer) {
 }
 
 void Bird::addUpwardVelocity() {
-    PhysicsBody::setEnablePhysics(true);
+    physicsBody.setEnablePhysics(true);
     Vector velocityVector = Vector();
     velocityVector.x = 0;
     velocityVector.y = flapStrength;
     
-    PhysicsBody::setVelocity(velocityVector);
+    physicsBody.setVelocity(velocityVector);
 }
 
 void Bird::incrementAnimation() {
