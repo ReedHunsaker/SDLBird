@@ -11,11 +11,16 @@
 #include <stdio.h>
 #include "Bird.hpp"
 #include "Background.hpp"
+#include "Ceiling.hpp"
+#include "Ground.hpp"
 #include "Scene.hpp"
+
 
 class MainScene: public Scene {
     Background background;
     Bird bird;
+    Ceiling ceiling;
+    Ground ground;
 public:
     MainScene(SDL_Window *window, SDL_Renderer *renderer);
 };

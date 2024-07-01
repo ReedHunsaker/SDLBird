@@ -12,6 +12,7 @@
 #include <list>
 #include "Entity.hpp"
 #include <SDL3/SDL.h>
+#include "Collisions.hpp"
 
 class Scene {
     /// List of entities registered to a scene in the order they appear.

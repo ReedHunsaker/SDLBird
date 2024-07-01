@@ -9,28 +9,34 @@
 #define Bird_hpp
 
 #include <stdio.h>
+#include <iostream>
 #include <SDL3/SDL.h>
 #include <SDL3_image/SDL_image.h>
 #include "PhysicsBody.hpp"
 #include "ImageLoader.hpp"
 #include "vector"
+#include "Collisions.hpp"
 
 class Bird: public Entity {;
+
     std::vector<SDL_Texture*> textures;
     int textureIndex;
     float animationFPS;
     float animationTickTime;
     Uint64 animationTimer;
     PhysicsBody physicsBody;
+    
     /// Rotation of sprite in degrees
     float rotation;
     float flapStrength;
     void (Bird::*animation)();
+
     
     void incrementAnimation();
     void decrementAnimation();
-    
+
 public:
+    std::string obj_name = "bird";
     Bird();
     
     /// Adds a positive velocity vector

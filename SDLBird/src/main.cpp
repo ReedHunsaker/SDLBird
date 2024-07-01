@@ -8,12 +8,13 @@
 #include <SDL3/SDL.h>
 #include <SDL3/SDL_main.h>
 #include <SDL3_image/SDL_image.h>
-#include "Bird.hpp"
-#include "Background.hpp"
 #include "MainScene.hpp"
 
 SDL_Window *window;
 SDL_Renderer *renderer;
+
+Collisions collisions;
+Bird bird;
 
 int gameIsRunning;
 
@@ -40,7 +41,9 @@ int createWindow(void) {
 }
 
 void setup(Scene *scene) {
+    
     scene->setup();
+
 }
 
 /// Polls for user input and fires associated events
@@ -60,6 +63,7 @@ void update(Scene *scene) {
     // Delays a set amount of time before continuing to render (standardizes FPS)
     SDL_Delay((Uint32) Constants::frameTargetTime);
     scene->update();
+
 }
 
 void render(Scene *scene) {

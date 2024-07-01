@@ -12,6 +12,7 @@
 #include <SDL3/SDL.h>
 #include <SDL3_image/SDL_image.h>
 
+
 /// An object that can be rendered by the device
 class Entity {
     
