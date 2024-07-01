@@ -13,33 +13,40 @@
 #ifndef Collisions_hpp
 #define Collisions_hpp
 
-class Collisions: public Entity {
-    
-
-    
+class Collisions{
 
 public:
-    std::unordered_map<std::string, SDL_FRect> collisionBoxes;
+
+    // Delete copy constructor and assignment operator
+    Collisions(const Collisions&) = delete;
+    Collisions& operator=(const Collisions&) = delete;
+
+    // Static method to access the single instance
+    static Collisions& getInstance() {
+        static Collisions instance;
+        return instance;
+    }
+
+    std::unordered_map<std::string, SDL_FRect*> collisionBoxes;
     Collisions();
-    //create a collision box
+
+    //create a collision box if the object has no SDL_FRect render frame
     SDL_FRect createCollisionBox(float x, float y, float w, float h);
-    //attach the collision box to an object
+
+    //remove a collision box
+    void removeCollisionBox(const std::string& name);
+
+    //attach the collision box to an object, often object frames can be used as the collision box
     void addCollisionBox(std::string obj_tag, const SDL_FRect& box);
+
     //will check all collisions of all objects
     bool checkCollisions() const;
-    //will check all collisions happening to an specific object
+
+    //will check all collisions happening to a specific object
     std::string checkObjectCollision(std::string obj_tag);
+
     //update the collision box positiion
     void updateCollisionBoxPosition(const std::string& obj_tag, float new_x, float new_y);
-
-    void setup(SDL_Window* window, SDL_Renderer* renderer);
-    void update();
-    void render(SDL_Renderer* renderer);
-
-    private:
-        SDL_FRect groundCollisionBox;
-        SDL_FRect ceilingCollisionBox;
-        bool renderCollisionBoxes = false;
 
 };
 
