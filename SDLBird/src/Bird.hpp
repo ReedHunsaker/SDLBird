@@ -14,21 +14,13 @@
 #include "PhysicsBody.hpp"
 #include "ImageLoader.hpp"
 #include "vector"
+#include "AnimationController.hpp"
 
 class Bird: public Entity {;
-    std::vector<SDL_Texture*> textures;
-    int textureIndex;
-    float animationFPS;
-    float animationTickTime;
-    Uint64 animationTimer;
     PhysicsBody physicsBody;
-    /// Rotation of sprite in degrees
-    float rotation;
+    AnimationController animationController;
+
     float flapStrength;
-    void (Bird::*animation)();
-    
-    void incrementAnimation();
-    void decrementAnimation();
     
 public:
     Bird();
@@ -39,6 +31,8 @@ public:
     void input(Uint32 eventType) override;
     void update() override;
     void render(SDL_Renderer *renderer) override;
+
+    void setupAnimations(SDL_Renderer *renderer);
 };
 
 #endif /* Bird_hpp */
