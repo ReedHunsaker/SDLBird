@@ -55,30 +55,13 @@ void Bird::input(Uint32 eventType) {
 
 void Bird::update() {
     physicsBody.update(&frame);
+    animationController.update();
     //collisions
     Collisions::getInstance().updateCollisionBoxPosition(obj_name, frame.x, frame.y);
     Collisions::getInstance().checkObjectCollision(obj_name);
-    
-    Uint64 elapsedTime = SDL_GetTicks() - animationTimer;
-    if (elapsedTime > animationTickTime) {
-        (this->*animation)();
-        animationTimer = SDL_GetTicks();
-    }
-    animationController.update();
 }
 
 void Bird::render(SDL_Renderer *renderer) {
-    if (SDL_RenderTexture(renderer, textures[textureIndex], NULL, &frame) != 0) {
-        SDL_Log("Error drawing texture: %s", SDL_GetError());
-        return;
-    }
-    ////Renders all hit boxes, used for debugging bird hitbox.
-    // SDL_SetRenderDrawColor(renderer, 255, 0, 0, 255);
-    //     for (const auto& box : Collisions::getInstance().collisionBoxes) {
-    //         if (SDL_RenderFillRect(renderer, box.second) != 0) {
-    //             SDL_Log("Error drawing collisionBox: %s", SDL_GetError());
-    //         }
-    //     }
     animationController.render(renderer, frame);
 }
 

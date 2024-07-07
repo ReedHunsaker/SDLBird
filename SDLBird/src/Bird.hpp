@@ -16,6 +16,7 @@
 #include "ImageLoader.hpp"
 #include "vector"
 #include "AnimationController.hpp"
+#include "Collisions.hpp"
 
 class Bird: public Entity {;
     PhysicsBody physicsBody;
