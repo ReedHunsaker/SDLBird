@@ -67,9 +67,6 @@ void update(Scene *scene) {
 }
 
 void render(Scene *scene) {
-    SDL_SetRenderDrawColor(renderer, 133, 43, 255, 0);
-    SDL_RenderClear(renderer);
-        
     scene->render();
     
     SDL_RenderPresent(renderer); // Switches the back buffer with the screen to render it

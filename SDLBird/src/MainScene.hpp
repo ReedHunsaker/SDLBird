@@ -9,16 +9,20 @@
 #define MainScene_hpp
 
 #include <stdio.h>
+#include <list>
 #include "Bird.hpp"
 #include "Background.hpp"
 #include "Ceiling.hpp"
 #include "Ground.hpp"
 #include "Scene.hpp"
+#include "Pipes.hpp"
 
 
 class MainScene: public Scene {
     Background background;
     Bird bird;
+    Pipes pipeOne;
+    Pipes pipeTwo;
     Ceiling ceiling;
     Ground ground;
 public:

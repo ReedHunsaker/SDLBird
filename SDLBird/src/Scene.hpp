@@ -10,6 +10,7 @@
 
 #include <stdio.h>
 #include <list>
+#include <stdbool.h>
 #include "Entity.hpp"
 #include <SDL3/SDL.h>
 #include "Collisions.hpp"
@@ -19,6 +20,7 @@ class Scene {
     std::list<Entity*> entities;
     SDL_Window *window;
     SDL_Renderer *renderer;
+    bool hasRanSetup;
     
     /// Generic function that loops through each entity in the list of entities and applies a function to it where entity is the parameter
     template<typename Func>

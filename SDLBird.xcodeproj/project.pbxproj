@@ -10,8 +10,8 @@
 		5214B0872C232BB600AFB469 /* Background.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5214B07F2C232BB600AFB469 /* Background.cpp */; };
 		5214B08D2C23328C00AFB469 /* backgroundPortrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 5214B08C2C23328C00AFB469 /* backgroundPortrait.png */; };
 		5214B08F2C2332B500AFB469 /* backgroundLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 5214B08E2C2332B400AFB469 /* backgroundLandscape.png */; };
-		5225655B2C1A7C39005C84DE /* SDL3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5225655A2C1A7C32005C84DE /* SDL3.framework */; };
-		5225655C2C1A7C39005C84DE /* SDL3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5225655A2C1A7C32005C84DE /* SDL3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5214B0AE2C23915800AFB469 /* SDL3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5214B0AD2C23915800AFB469 /* SDL3.framework */; };
+		5214B0AF2C23915800AFB469 /* SDL3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5214B0AD2C23915800AFB469 /* SDL3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		522565712C1A7C54005C84DE /* SDL3_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 522565692C1A7C49005C84DE /* SDL3_image.framework */; };
 		522565722C1A7C54005C84DE /* SDL3_image.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 522565692C1A7C49005C84DE /* SDL3_image.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		522565772C1A83EE005C84DE /* Bird.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 522565752C1A83EE005C84DE /* Bird.cpp */; };
@@ -26,18 +26,13 @@
 		52B085742C22A3EA00FD5FB8 /* bird-midFlap.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B085712C22A3EA00FD5FB8 /* bird-midFlap.png */; };
 		52B085752C22A3EA00FD5FB8 /* bird-upFlap.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B085722C22A3EA00FD5FB8 /* bird-upFlap.png */; };
 		52B085762C22A3EA00FD5FB8 /* bird-downFlap.png in Resources */ = {isa = PBXBuildFile; fileRef = 52B085732C22A3EA00FD5FB8 /* bird-downFlap.png */; };
+		52F814482C2D1FF200A719CF /* pipe.png in Resources */ = {isa = PBXBuildFile; fileRef = 52F814442C2D1FF200A719CF /* pipe.png */; };
+		52F8144B2C2D201300A719CF /* Pipes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52F814492C2D201300A719CF /* Pipes.cpp */; };
 		52F814722C2E4F6200A719CF /* Scene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52F814702C2E4F6200A719CF /* Scene.cpp */; };
 		52F814752C2E6CD800A719CF /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52F814732C2E6CD800A719CF /* MainScene.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		522565592C1A7C32005C84DE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 522565532C1A7C32005C84DE /* SDL.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = BECDF66C0761BA81005FE872;
-			remoteInfo = SDL3;
-		};
 		522565682C1A7C49005C84DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5225655E2C1A7C49005C84DE /* SDL_image.xcodeproj */;
@@ -54,8 +49,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				5214B0AF2C23915800AFB469 /* SDL3.framework in Embed Frameworks */,
 				522565722C1A7C54005C84DE /* SDL3_image.framework in Embed Frameworks */,
-				5225655C2C1A7C39005C84DE /* SDL3.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -67,7 +62,7 @@
 		5214B0862C232BB600AFB469 /* Background.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Background.hpp; sourceTree = "<group>"; };
 		5214B08C2C23328C00AFB469 /* backgroundPortrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundPortrait.png; sourceTree = "<group>"; };
 		5214B08E2C2332B400AFB469 /* backgroundLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundLandscape.png; sourceTree = "<group>"; };
-		522565532C1A7C32005C84DE /* SDL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL.xcodeproj; path = ../SDL/Xcode/SDL/SDL.xcodeproj; sourceTree = "<group>"; };
+		5214B0AD2C23915800AFB469 /* SDL3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDL3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5225655E2C1A7C49005C84DE /* SDL_image.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL_image.xcodeproj; path = ../SDL_image/Xcode/SDL_image.xcodeproj; sourceTree = "<group>"; };
 		522565752C1A83EE005C84DE /* Bird.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Bird.cpp; sourceTree = "<group>"; };
 		522565762C1A83EE005C84DE /* Bird.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Bird.hpp; sourceTree = "<group>"; };
@@ -88,6 +83,9 @@
 		52B085712C22A3EA00FD5FB8 /* bird-midFlap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bird-midFlap.png"; sourceTree = "<group>"; };
 		52B085722C22A3EA00FD5FB8 /* bird-upFlap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bird-upFlap.png"; sourceTree = "<group>"; };
 		52B085732C22A3EA00FD5FB8 /* bird-downFlap.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bird-downFlap.png"; sourceTree = "<group>"; };
+		52F814442C2D1FF200A719CF /* pipe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pipe.png; sourceTree = "<group>"; };
+		52F814492C2D201300A719CF /* Pipes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Pipes.cpp; sourceTree = "<group>"; };
+		52F8144A2C2D201300A719CF /* Pipes.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Pipes.hpp; sourceTree = "<group>"; };
 		52F814702C2E4F6200A719CF /* Scene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Scene.cpp; sourceTree = "<group>"; };
 		52F814712C2E4F6200A719CF /* Scene.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Scene.hpp; sourceTree = "<group>"; };
 		52F814732C2E6CD800A719CF /* MainScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MainScene.cpp; sourceTree = "<group>"; };
@@ -99,22 +97,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5214B0AE2C23915800AFB469 /* SDL3.framework in Frameworks */,
 				522565712C1A7C54005C84DE /* SDL3_image.framework in Frameworks */,
-				5225655B2C1A7C39005C84DE /* SDL3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		522565542C1A7C32005C84DE /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5225655A2C1A7C32005C84DE /* SDL3.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		5225655F2C1A7C49005C84DE /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +116,7 @@
 		5225657B2C1A9D08005C84DE /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				52F814442C2D1FF200A719CF /* pipe.png */,
 				5214B08E2C2332B400AFB469 /* backgroundLandscape.png */,
 				5214B08C2C23328C00AFB469 /* backgroundPortrait.png */,
 				52B085732C22A3EA00FD5FB8 /* bird-downFlap.png */,
@@ -151,6 +142,8 @@
 				52B0856D2C229FE600FD5FB8 /* Constants.hpp */,
 				52B0854D2C223DC100FD5FB8 /* ImageLoader.hpp */,
 				52B0854E2C223DC100FD5FB8 /* ImageLoader.cpp */,
+				52F814492C2D201300A719CF /* Pipes.cpp */,
+				52F8144A2C2D201300A719CF /* Pipes.hpp */,
 				52F814702C2E4F6200A719CF /* Scene.cpp */,
 				52F814712C2E4F6200A719CF /* Scene.hpp */,
 				52F814732C2E6CD800A719CF /* MainScene.cpp */,
@@ -192,8 +185,8 @@
 		52997C232C0BB63E00B68BB1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5214B0AD2C23915800AFB469 /* SDL3.framework */,
 				5225655E2C1A7C49005C84DE /* SDL_image.xcodeproj */,
-				522565532C1A7C32005C84DE /* SDL.xcodeproj */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -246,10 +239,6 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 522565542C1A7C32005C84DE /* Products */;
-					ProjectRef = 522565532C1A7C32005C84DE /* SDL.xcodeproj */;
-				},
-				{
 					ProductGroup = 5225655F2C1A7C49005C84DE /* Products */;
 					ProjectRef = 5225655E2C1A7C49005C84DE /* SDL_image.xcodeproj */;
 				},
@@ -262,13 +251,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		5225655A2C1A7C32005C84DE /* SDL3.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SDL3.framework;
-			remoteRef = 522565592C1A7C32005C84DE /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		522565692C1A7C49005C84DE /* SDL3_image.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -285,6 +267,7 @@
 			files = (
 				5214B08D2C23328C00AFB469 /* backgroundPortrait.png in Resources */,
 				5214B08F2C2332B500AFB469 /* backgroundLandscape.png in Resources */,
+				52F814482C2D1FF200A719CF /* pipe.png in Resources */,
 				52B085742C22A3EA00FD5FB8 /* bird-midFlap.png in Resources */,
 				52B085752C22A3EA00FD5FB8 /* bird-upFlap.png in Resources */,
 				52B085762C22A3EA00FD5FB8 /* bird-downFlap.png in Resources */,
@@ -310,6 +293,7 @@
 				52F814722C2E4F6200A719CF /* Scene.cpp in Sources */,
 				52997C1E2C0BB5C100B68BB1 /* main.cpp in Sources */,
 				5214B0872C232BB600AFB469 /* Background.cpp in Sources */,
+				52F8144B2C2D201300A719CF /* Pipes.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
