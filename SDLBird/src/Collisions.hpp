@@ -7,7 +7,7 @@
 
 #include <SDL3/SDL.h>
 #include <SDL3_image/SDL_image.h>
-#include <unordered_map>
+#include <map>
 #include <vector>
 #include "Entity.hpp"
 
@@ -28,7 +28,7 @@ public:
         return instance;
     }
 
-    std::unordered_map<std::string, std::vector<SDL_FRect>> collisionBoxes;
+    std::map<std::string, std::vector<SDL_FRect>> collisionBoxes;
     Collisions();
 
     //create a collision box if the object has no SDL_FRect render frame
