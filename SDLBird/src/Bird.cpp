@@ -16,17 +16,10 @@ void Bird::setup(SDL_Window *window, SDL_Renderer *renderer) {
     int windowHeight = 0;
     int *x = &windowWidth, *y = &windowHeight;
     int width = 34, height = 24;
-    
-    textures.push_back(loadImage(renderer, "bird-downFlap.png"));
-    textures.push_back(loadImage(renderer, "bird-midFlap.png"));
-    textures.push_back(loadImage(renderer, "bird-upFlap.png"));
-    
-    textureIndex = 0;
-    animationFPS = 6;
-    animationTimer = SDL_GetTicks();
-    animationTickTime = 1000 / animationFPS;
-    animation = &Bird::incrementAnimation;
-    
+
+    setupAnimations(renderer);
+    animationController.setAnimation("idle");
+
     frame = SDL_FRect();
     
     if (SDL_GetWindowSize(window, x, y) != 0) {
@@ -46,31 +39,25 @@ void Bird::setup(SDL_Window *window, SDL_Renderer *renderer) {
     frame.y = (*y * 0.5) - midWidth;
     
     flapStrength = -300;
+
 }
 
 void Bird::input(Uint32 eventType) {
     switch (eventType) {
         case SDL_EVENT_KEY_DOWN: case SDL_EVENT_FINGER_DOWN:
             addUpwardVelocity();
+            animationController.setAnimation("flying");
             break;
     }
 }
 
 void Bird::update() {
     physicsBody.update(&frame);
-    
-    Uint64 elapsedTime = SDL_GetTicks() - animationTimer;
-    if (elapsedTime > animationTickTime) {
-        (this->*animation)();
-        animationTimer = SDL_GetTicks();
-    }
+    animationController.update();
 }
 
 void Bird::render(SDL_Renderer *renderer) {
-    if (SDL_RenderTexture(renderer, textures[textureIndex], NULL, &frame) != 0) {
-        SDL_Log("Error drawing texture: %s", SDL_GetError());
-        return;
-    }
+    animationController.render(renderer, frame);
 }
 
 void Bird::addUpwardVelocity() {
@@ -82,20 +69,20 @@ void Bird::addUpwardVelocity() {
     physicsBody.setVelocity(velocityVector);
 }
 
-void Bird::incrementAnimation() {
-    // gross but it works 🤷
-    textureIndex += 1;
-    if (textureIndex > 2) {
-        textureIndex = 1;
-        animation = &Bird::decrementAnimation;
-    }
-}
+void Bird::setupAnimations(SDL_Renderer *renderer) {
+    Animation* idleAnimation = new Animation(0.0f);
+    SDL_Texture* birdMidFlap = loadImage(renderer, "bird-midFlap.png");
+    idleAnimation->addFrame(birdMidFlap);
 
-void Bird::decrementAnimation() {
-    // gross but it works 🤷
-    textureIndex -= 1;
-    if (textureIndex < 0) {
-        textureIndex = 1;
-        animation = &Bird::incrementAnimation;
-    }
+    Animation* flyingAnimation = new Animation(0.085f);
+    SDL_Texture* birdDownFlap = loadImage(renderer, "bird-downFlap.png");
+    SDL_Texture* birdUpFlap = loadImage(renderer, "bird-upFlap.png");
+
+    flyingAnimation->addFrame(birdDownFlap);
+    flyingAnimation->addFrame(birdMidFlap);
+    flyingAnimation->addFrame(birdUpFlap);
+    flyingAnimation->addFrame(birdMidFlap);
+
+    animationController.addAnimation("idle", idleAnimation);
+    animationController.addAnimation("flying", flyingAnimation);
 }
