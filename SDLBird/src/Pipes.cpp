@@ -76,6 +76,9 @@ void Pipes::update() {
 
     Collisions::getInstance().updateCollisionBoxPosition(obj_name, 0, bottomPipeFrame.x, bottomPipeFrame.y);
     Collisions::getInstance().updateCollisionBoxPosition(obj_name, 1, topPipeFrame.x, topPipeFrame.y);
+
+    //DEBUG Statement
+    std::cout << randomOffset << std::endl;
 }
 
 void Pipes::input(Uint32 eventType) {

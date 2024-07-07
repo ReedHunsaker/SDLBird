@@ -18,6 +18,7 @@
 #include "Entity.hpp"
 #include "Constants.hpp"
 #include "Collisions.hpp"
+#include <iostream>
 
 class Pipes: public Entity {
     std::string obj_name = "pipes";
