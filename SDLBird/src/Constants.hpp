@@ -10,6 +10,9 @@
 
 #include <stdio.h>
 #include <random>
+#include <iomanip>
+#include <sstream>
+#include <iostream>
 
 namespace Constants {
     extern const float FPS;
@@ -21,6 +24,7 @@ namespace Constants {
 
     /// Generates a random float that is between two numbers
     float randFloat(float max, float min);
+    std::string generateUUID();
 }
 
 

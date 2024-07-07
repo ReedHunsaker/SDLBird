@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <SDL3/SDL.h>
 #include <SDL3_image/SDL_image.h>
+#include "Constants.hpp"
 
 
 /// An object that can be rendered by the device
@@ -25,6 +26,7 @@ public:
     virtual void input(Uint32 eventType) = 0;
     virtual void update() = 0;
     virtual void render(SDL_Renderer *renderer) = 0;
+    
 };
 
 #endif /* Entity_hpp */

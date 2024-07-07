@@ -21,12 +21,12 @@ SDL_FRect Collisions::createCollisionBox(float x, float y, float w, float h) {
 
 void Collisions::addCollisionBox(std::string obj_name, const std::vector<SDL_FRect>& boxes) {
     collisionBoxes[obj_name] = boxes;
-    std::cout << obj_name << std::endl;
+    std::cout << "Collisions Box name --> " << obj_name << std::endl;
 }
 
 void Collisions::removeCollisionBox(const std::string& name) {
     collisionBoxes.erase(name);
-    std::cout << "Removed collision box for " << name << std::endl;
+    // std::cout << "Removed collision box for " << name << std::endl;
 }
 
 bool Collisions::checkCollisions() const {
@@ -35,7 +35,7 @@ bool Collisions::checkCollisions() const {
             for (const auto& box1 : it1->second) {
                 for (const auto& box2 : it2->second) {
                     if (SDL_HasRectIntersectionFloat(&box1, &box2)) {
-                        std::cout << "Collision between " << it1->first << " and " << it2->first << std::endl;
+                        // std::cout << "Collision between " << it1->first << " and " << it2->first << std::endl;
                         return true;
                     }
                 }
@@ -71,7 +71,7 @@ void Collisions::updateCollisionBoxPosition(const std::string& obj_name, size_t 
         // std::cout << "Updated collision box for " << obj_name << " at index " << index << " to ("
         //           << new_x << ", " << new_y << ")" << std::endl;
     } else {
-        std::cerr << "Collision box for " << obj_name << " at index " << index << " not found!" << std::endl;
+        // std::cerr << "Collision box for " << obj_name << " at index " << index << " not found!" << std::endl;
     }
 }
 

@@ -50,6 +50,10 @@
         "xutility": "cpp",
         "map": "cpp",
         "string": "cpp",
-        "xtree": "cpp"
+        "xtree": "cpp",
+        "iomanip": "cpp",
+        "sstream": "cpp",
+        "xlocmon": "cpp",
+        "xloctime": "cpp"
     }
 }

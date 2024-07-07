@@ -22,6 +22,7 @@
 
 class Pipes: public Entity {
     std::string obj_name = "pipes";
+    std::string id = Constants::generateUUID();
     /// Gap between top and bottom pipe
     float pipeGap;
     

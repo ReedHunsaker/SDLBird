@@ -26,7 +26,8 @@ void Pipes::setup(SDL_Window *window, SDL_Renderer *renderer) {
     this->renderer = renderer;
     resetPipes(spawnOffset);
 
-    Collisions::getInstance().addCollisionBox(obj_name, {bottomPipeFrame, topPipeFrame});
+    Collisions::getInstance().addCollisionBox(id, {bottomPipeFrame, topPipeFrame});
+    std::cout << id << std::endl;
 }
 
 void Pipes::resetPipes(float spawnOffset) {
@@ -61,7 +62,7 @@ void Pipes::resetPipes(float spawnOffset) {
 }
 
 void Pipes::start() {
-    didStart = true;
+    didStart = true;    
 }
 
 void Pipes::update() {
@@ -74,11 +75,8 @@ void Pipes::update() {
         resetPipes(0);
     }
 
-    Collisions::getInstance().updateCollisionBoxPosition(obj_name, 0, bottomPipeFrame.x, bottomPipeFrame.y);
-    Collisions::getInstance().updateCollisionBoxPosition(obj_name, 1, topPipeFrame.x, topPipeFrame.y);
-
-    //DEBUG Statement
-    std::cout << randomOffset << std::endl;
+    Collisions::getInstance().updateCollisionBoxPosition(id, 0, bottomPipeFrame.x, bottomPipeFrame.y);
+    Collisions::getInstance().updateCollisionBoxPosition(id, 1, topPipeFrame.x, topPipeFrame.y);
 }
 
 void Pipes::input(Uint32 eventType) {
@@ -100,6 +98,6 @@ void Pipes::render(SDL_Renderer *renderer) {
         SDL_Log("Error drawing top pipe texture: %s", SDL_GetError());
         return;
     }
-    Collisions::getInstance().renderCollisionBox(renderer, obj_name, 0);
-    Collisions::getInstance().renderCollisionBox(renderer, obj_name, 1);
+    Collisions::getInstance().renderCollisionBox(renderer, id, 0);
+    Collisions::getInstance().renderCollisionBox(renderer, id, 1);
 }
