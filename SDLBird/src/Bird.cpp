@@ -40,7 +40,7 @@ void Bird::setup(SDL_Window *window, SDL_Renderer *renderer) {
     
     flapStrength = -300;
     //collisions
-    Collisions::getInstance().addCollisionBox(obj_name, frame);
+    Collisions::getInstance().addCollisionBox(obj_name, {frame});
 
 }
 
@@ -57,12 +57,13 @@ void Bird::update() {
     physicsBody.update(&frame);
     animationController.update();
     //collisions
-    Collisions::getInstance().updateCollisionBoxPosition(obj_name, frame.x, frame.y);
+    Collisions::getInstance().updateCollisionBoxPosition(obj_name, 0, frame.x, frame.y);
     Collisions::getInstance().checkObjectCollision(obj_name);
 }
 
 void Bird::render(SDL_Renderer *renderer) {
     animationController.render(renderer, frame);
+    Collisions::getInstance().renderCollisionBox(renderer, obj_name, 0);
 }
 
 void Bird::addUpwardVelocity() {

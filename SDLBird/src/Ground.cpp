@@ -16,7 +16,7 @@ void Ground::setup(SDL_Window *window, SDL_Renderer *renderer) {
     SDL_GetWindowSize(window, &windowWidth, &windowHeight);
 
     SDL_FRect groundCollisionBox = Collisions::getInstance().createCollisionBox(0.0f, static_cast<float>(windowHeight + 5), static_cast<float>(windowWidth), 5.0f);
-    Collisions::getInstance().addCollisionBox(obj_name, groundCollisionBox);
+    Collisions::getInstance().addCollisionBox(obj_name, {groundCollisionBox});
 
 }
 void Ground::update(){

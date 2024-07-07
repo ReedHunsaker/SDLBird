@@ -17,8 +17,10 @@
 #include "ImageLoader.hpp"
 #include "Entity.hpp"
 #include "Constants.hpp"
+#include "Collisions.hpp"
 
 class Pipes: public Entity {
+    std::string obj_name = "pipes";
     /// Gap between top and bottom pipe
     float pipeGap;
     

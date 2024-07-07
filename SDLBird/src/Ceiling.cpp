@@ -16,7 +16,7 @@ void Ceiling::setup(SDL_Window *window, SDL_Renderer *renderer) {
     SDL_GetWindowSize(window, &windowWidth, &windowHeight);
 
     SDL_FRect ceilingCollisionBox = Collisions::getInstance().createCollisionBox(0.0f, -50.0f, static_cast<float>(windowWidth), 5.0f);
-    Collisions::getInstance().addCollisionBox(obj_name, ceilingCollisionBox);
+    Collisions::getInstance().addCollisionBox(obj_name, {ceilingCollisionBox});
 }
 void Ceiling::update(){
 
