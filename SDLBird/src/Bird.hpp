@@ -9,6 +9,7 @@
 #define Bird_hpp
 
 #include <stdio.h>
+#include <iostream>
 #include <SDL3/SDL.h>
 #include <SDL3_image/SDL_image.h>
 #include "PhysicsBody.hpp"
@@ -23,6 +24,7 @@ class Bird: public Entity {;
     float flapStrength;
     
 public:
+    std::string obj_name = "bird";
     Bird();
     
     /// Adds a positive velocity vector

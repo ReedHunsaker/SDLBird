@@ -8,6 +8,7 @@
 #ifndef Background_hpp
 #define Background_hpp
 
+#include <iostream>
 #include <stdio.h>
 #include <SDL3/SDL.h>
 #include <SDL3_image/SDL_image.h>
@@ -15,6 +16,7 @@
 #include "Entity.hpp"
 
 class Background: public Entity {
+
     SDL_FRect frame1;
     SDL_FRect frame2;
     SDL_Texture *texture;
@@ -23,6 +25,7 @@ class Background: public Entity {
     SDL_Texture *getBackgroundTexture(SDL_Renderer *renderer);
     
 public:
+    std::string obj_name = "background";
     Background();
     
     /// Adds a positive velocity vector
