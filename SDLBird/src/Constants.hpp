@@ -24,7 +24,6 @@ namespace Constants {
 
     /// Generates a random float that is between two numbers
     float randFloat(float max, float min);
-    std::string generateUUID();
 }
 
 

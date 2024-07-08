@@ -19,10 +19,11 @@
 #include "Constants.hpp"
 #include "Collisions.hpp"
 #include <iostream>
+#include "UUID.hpp"
 
 class Pipes: public Entity {
     std::string obj_name = "pipes";
-    std::string id = Constants::generateUUID();
+    std::string id;
     /// Gap between top and bottom pipe
     float pipeGap;
     

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		520F64722C3B559A00EB2EF1 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 520F64692C3B559A00EB2EF1 /* Animation.cpp */; };
+		520F64732C3B559A00EB2EF1 /* AnimationController.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 520F646F2C3B559A00EB2EF1 /* AnimationController.cpp */; };
+		520F64782C3B55B000EB2EF1 /* Ground.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 520F64742C3B55B000EB2EF1 /* Ground.cpp */; };
+		520F64792C3B55B000EB2EF1 /* Ceiling.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 520F64762C3B55B000EB2EF1 /* Ceiling.cpp */; };
+		520F647A2C3B55B000EB2EF1 /* Collisions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 520F64772C3B55B000EB2EF1 /* Collisions.cpp */; };
+		520F647D2C3B64DD00EB2EF1 /* UUID.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 520F647B2C3B64DD00EB2EF1 /* UUID.cpp */; };
 		5214B0872C232BB600AFB469 /* Background.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5214B07F2C232BB600AFB469 /* Background.cpp */; };
 		5214B08D2C23328C00AFB469 /* backgroundPortrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 5214B08C2C23328C00AFB469 /* backgroundPortrait.png */; };
 		5214B08F2C2332B500AFB469 /* backgroundLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 5214B08E2C2332B400AFB469 /* backgroundLandscape.png */; };
@@ -58,6 +64,18 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		520F64692C3B559A00EB2EF1 /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
+		520F646D2C3B559A00EB2EF1 /* AnimationController.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = AnimationController.hpp; sourceTree = "<group>"; };
+		520F646E2C3B559A00EB2EF1 /* Animation.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Animation.hpp; sourceTree = "<group>"; };
+		520F646F2C3B559A00EB2EF1 /* AnimationController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationController.cpp; sourceTree = "<group>"; };
+		520F64702C3B559A00EB2EF1 /* Ground.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Ground.hpp; sourceTree = "<group>"; };
+		520F64712C3B559A00EB2EF1 /* Ceiling.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Ceiling.hpp; sourceTree = "<group>"; };
+		520F64742C3B55B000EB2EF1 /* Ground.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ground.cpp; sourceTree = "<group>"; };
+		520F64752C3B55B000EB2EF1 /* Collisions.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Collisions.hpp; sourceTree = "<group>"; };
+		520F64762C3B55B000EB2EF1 /* Ceiling.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ceiling.cpp; sourceTree = "<group>"; };
+		520F64772C3B55B000EB2EF1 /* Collisions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Collisions.cpp; sourceTree = "<group>"; };
+		520F647B2C3B64DD00EB2EF1 /* UUID.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = UUID.cpp; sourceTree = "<group>"; };
+		520F647C2C3B64DD00EB2EF1 /* UUID.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = UUID.hpp; sourceTree = "<group>"; };
 		5214B07F2C232BB600AFB469 /* Background.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Background.cpp; sourceTree = "<group>"; };
 		5214B0862C232BB600AFB469 /* Background.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Background.hpp; sourceTree = "<group>"; };
 		5214B08C2C23328C00AFB469 /* backgroundPortrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundPortrait.png; sourceTree = "<group>"; };
@@ -129,6 +147,16 @@
 		522626912C0C223A00897A75 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				520F64762C3B55B000EB2EF1 /* Ceiling.cpp */,
+				520F64772C3B55B000EB2EF1 /* Collisions.cpp */,
+				520F64752C3B55B000EB2EF1 /* Collisions.hpp */,
+				520F64742C3B55B000EB2EF1 /* Ground.cpp */,
+				520F64692C3B559A00EB2EF1 /* Animation.cpp */,
+				520F646E2C3B559A00EB2EF1 /* Animation.hpp */,
+				520F646F2C3B559A00EB2EF1 /* AnimationController.cpp */,
+				520F646D2C3B559A00EB2EF1 /* AnimationController.hpp */,
+				520F64712C3B559A00EB2EF1 /* Ceiling.hpp */,
+				520F64702C3B559A00EB2EF1 /* Ground.hpp */,
 				5214B07F2C232BB600AFB469 /* Background.cpp */,
 				5214B0862C232BB600AFB469 /* Background.hpp */,
 				52997C1D2C0BB5C100B68BB1 /* main.cpp */,
@@ -148,6 +176,8 @@
 				52F814712C2E4F6200A719CF /* Scene.hpp */,
 				52F814732C2E6CD800A719CF /* MainScene.cpp */,
 				52F814742C2E6CD800A719CF /* MainScene.hpp */,
+				520F647B2C3B64DD00EB2EF1 /* UUID.cpp */,
+				520F647C2C3B64DD00EB2EF1 /* UUID.hpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -284,16 +314,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				520F647D2C3B64DD00EB2EF1 /* UUID.cpp in Sources */,
 				52B085672C22479B00FD5FB8 /* Entity.cpp in Sources */,
+				520F647A2C3B55B000EB2EF1 /* Collisions.cpp in Sources */,
+				520F64782C3B55B000EB2EF1 /* Ground.cpp in Sources */,
 				52F814752C2E6CD800A719CF /* MainScene.cpp in Sources */,
 				52B0855E2C22470000FD5FB8 /* PhysicsBody.cpp in Sources */,
 				52B0856E2C229FE600FD5FB8 /* Constants.cpp in Sources */,
+				520F64792C3B55B000EB2EF1 /* Ceiling.cpp in Sources */,
+				520F64732C3B559A00EB2EF1 /* AnimationController.cpp in Sources */,
 				522565772C1A83EE005C84DE /* Bird.cpp in Sources */,
 				52B0854F2C223DC100FD5FB8 /* ImageLoader.cpp in Sources */,
 				52F814722C2E4F6200A719CF /* Scene.cpp in Sources */,
 				52997C1E2C0BB5C100B68BB1 /* main.cpp in Sources */,
 				5214B0872C232BB600AFB469 /* Background.cpp in Sources */,
 				52F8144B2C2D201300A719CF /* Pipes.cpp in Sources */,
+				520F64722C3B559A00EB2EF1 /* Animation.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

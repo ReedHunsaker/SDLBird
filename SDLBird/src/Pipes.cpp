@@ -24,6 +24,7 @@ void Pipes::setSpawnOffset(float offset) {
 void Pipes::setup(SDL_Window *window, SDL_Renderer *renderer) {
     this->window = window;
     this->renderer = renderer;
+    id = generateUUID().id;
     resetPipes(spawnOffset);
 
     Collisions::getInstance().addCollisionBox(id, {bottomPipeFrame, topPipeFrame});
