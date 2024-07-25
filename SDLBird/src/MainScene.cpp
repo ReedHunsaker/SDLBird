@@ -12,6 +12,13 @@ MainScene::MainScene(SDL_Window *window, SDL_Renderer *renderer): Scene(window, 
     this->background = Background();
     this->pipeOne = Pipes();
     this->pipeTwo = Pipes();
+    this->score = Text();
+    
+    pipeOne.score = &score;
+    pipeTwo.score = &score;
+    
+    pipeOne.player = &bird;
+    pipeTwo.player = &bird;
     
     int windowWidth = 0;
     int *pWindowWidth = &windowWidth;
@@ -21,14 +28,19 @@ MainScene::MainScene(SDL_Window *window, SDL_Renderer *renderer): Scene(window, 
     }
     pipeOne.setSpawnOffset(0);
     pipeTwo.setSpawnOffset((*pWindowWidth * 0.5) + pipeTwo.pipeWidth);
-    this->ceiling = Ceiling();
-    this->ground = Ground();  
     
+    score.setText("0");
+    
+    SDL_Color black = {0, 0, 0};
+    score.setTextColor(black);
+    this->ceiling = Ceiling();
+    this->ground = Ground();
     this->addEntity(&background);
     this->addEntity(&ground);
     this->addEntity(&ceiling);
     this->addEntity(&bird);
     this->addEntity(&pipeOne);
     this->addEntity(&pipeTwo);
+    this->addEntity(&score);
 
 }

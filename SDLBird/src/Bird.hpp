@@ -27,7 +27,7 @@ class Bird: public Entity {;
 public:
     std::string obj_name = "bird";
     Bird();
-    
+    int score = 0;
     /// Adds a positive velocity vector
     void addUpwardVelocity();
     void setup(SDL_Window *window, SDL_Renderer *renderer) override;

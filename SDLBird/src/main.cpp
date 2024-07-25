@@ -79,6 +79,10 @@ void destroy(void) {
 
 int main(int argc, char *argv[]) {
     
+    if (TTF_Init() == -1)
+      {
+          SDL_Log("Error initializing ttf; %s", TTF_GetError());
+      }
     gameIsRunning = createWindow();
     Scene scene = MainScene(window, renderer);
     setup(&scene);

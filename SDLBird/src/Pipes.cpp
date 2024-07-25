@@ -32,6 +32,7 @@ void Pipes::setup(SDL_Window *window, SDL_Renderer *renderer) {
 }
 
 void Pipes::resetPipes(float spawnOffset) {
+    didPass = false;
     int *x = &windowWidth, *y = &windowHeight;
     if (SDL_GetWindowSize(window, x, y) != 0) {
         SDL_Log("Error getting window size: %s", SDL_GetError());
@@ -54,6 +55,10 @@ void Pipes::resetPipes(float spawnOffset) {
     bottomPipeFrame.w = pipeWidth;
     bottomPipeFrame.y = (*y * 0.5) + (pipeGap * 0.5) + randomOffset;
     bottomPipeFrame.x = xSpawnPoint;
+    
+    frame.w = pipeWidth;
+    frame.h = *y;
+    frame.y = 0;
 
     // Top pipe positioning
     topPipeFrame.h = *y;
@@ -66,6 +71,10 @@ void Pipes::start() {
     didStart = true;    
 }
 
+void Pipes::stop() {
+    didStart = false;
+}
+
 void Pipes::update() {
     if (!didStart) {
         return;
@@ -75,9 +84,13 @@ void Pipes::update() {
     if (bottomPipeFrame.x < -pipeWidth) {
         resetPipes(0);
     }
+    
+    frame.x = bottomPipeFrame.x;
+    midX = frame.x + (pipeWidth * 0.5);
 
     Collisions::getInstance().updateCollisionBoxPosition(id, 0, bottomPipeFrame.x, bottomPipeFrame.y);
     Collisions::getInstance().updateCollisionBoxPosition(id, 1, topPipeFrame.x, topPipeFrame.y);
+    checkBirdPass();
 }
 
 void Pipes::input(Uint32 eventType) {
@@ -101,4 +114,12 @@ void Pipes::render(SDL_Renderer *renderer) {
     }
     Collisions::getInstance().renderCollisionBox(renderer, id, 0);
     Collisions::getInstance().renderCollisionBox(renderer, id, 1);
+}
+
+void Pipes::checkBirdPass() {
+    if (player->frame.x > midX && !didPass) {
+        player->score += 1;
+        score->setText(std::to_string(player->score));
+        didPass = true;
+    }
 }
