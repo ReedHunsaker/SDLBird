@@ -16,11 +16,15 @@
 		5214B0872C232BB600AFB469 /* Background.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5214B07F2C232BB600AFB469 /* Background.cpp */; };
 		5214B08D2C23328C00AFB469 /* backgroundPortrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 5214B08C2C23328C00AFB469 /* backgroundPortrait.png */; };
 		5214B08F2C2332B500AFB469 /* backgroundLandscape.png in Resources */ = {isa = PBXBuildFile; fileRef = 5214B08E2C2332B400AFB469 /* backgroundLandscape.png */; };
-		5214B0AE2C23915800AFB469 /* SDL3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5214B0AD2C23915800AFB469 /* SDL3.framework */; };
-		5214B0AF2C23915800AFB469 /* SDL3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5214B0AD2C23915800AFB469 /* SDL3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		522565712C1A7C54005C84DE /* SDL3_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 522565692C1A7C49005C84DE /* SDL3_image.framework */; };
 		522565722C1A7C54005C84DE /* SDL3_image.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 522565692C1A7C49005C84DE /* SDL3_image.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		522565772C1A83EE005C84DE /* Bird.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 522565752C1A83EE005C84DE /* Bird.cpp */; };
+		52401BFB2C50035700C9DB76 /* SDL3_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52401BFA2C50034C00C9DB76 /* SDL3_ttf.framework */; };
+		52401BFC2C50035700C9DB76 /* SDL3_ttf.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52401BFA2C50034C00C9DB76 /* SDL3_ttf.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		52401C252C502E6B00C9DB76 /* ruba.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52401C242C502E6B00C9DB76 /* ruba.ttf */; };
+		52516D222C45D4010097AA6E /* SDL3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52516D212C45D3F60097AA6E /* SDL3.framework */; };
+		52516D232C45D4010097AA6E /* SDL3.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 52516D212C45D3F60097AA6E /* SDL3.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		52613E202C3C75AC00720F5B /* Text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52613E1E2C3C75AC00720F5B /* Text.cpp */; };
 		52997C102C0BB58000B68BB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52997C0F2C0BB58000B68BB1 /* Assets.xcassets */; };
 		52997C132C0BB58000B68BB1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 52997C122C0BB58000B68BB1 /* Base */; };
 		52997C1E2C0BB5C100B68BB1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 52997C1D2C0BB5C100B68BB1 /* main.cpp */; };
@@ -46,6 +50,20 @@
 			remoteGlobalIDString = BE1FA72E07AF4C45004B6283;
 			remoteInfo = SDL3_image;
 		};
+		52401BF92C50034C00C9DB76 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52401BF22C50034C00C9DB76 /* SDL_ttf.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BE48FD6707AFA17000BB41DA;
+			remoteInfo = SDL3_ttf;
+		};
+		52516D202C45D3F60097AA6E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 52516D1A2C45D3F60097AA6E /* SDL.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BECDF66C0761BA81005FE872;
+			remoteInfo = SDL3;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -55,7 +73,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5214B0AF2C23915800AFB469 /* SDL3.framework in Embed Frameworks */,
+				52516D232C45D4010097AA6E /* SDL3.framework in Embed Frameworks */,
+				52401BFC2C50035700C9DB76 /* SDL3_ttf.framework in Embed Frameworks */,
 				522565722C1A7C54005C84DE /* SDL3_image.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -80,10 +99,14 @@
 		5214B0862C232BB600AFB469 /* Background.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Background.hpp; sourceTree = "<group>"; };
 		5214B08C2C23328C00AFB469 /* backgroundPortrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundPortrait.png; sourceTree = "<group>"; };
 		5214B08E2C2332B400AFB469 /* backgroundLandscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backgroundLandscape.png; sourceTree = "<group>"; };
-		5214B0AD2C23915800AFB469 /* SDL3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SDL3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5225655E2C1A7C49005C84DE /* SDL_image.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL_image.xcodeproj; path = ../SDL_image/Xcode/SDL_image.xcodeproj; sourceTree = "<group>"; };
 		522565752C1A83EE005C84DE /* Bird.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Bird.cpp; sourceTree = "<group>"; };
 		522565762C1A83EE005C84DE /* Bird.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Bird.hpp; sourceTree = "<group>"; };
+		52401BF22C50034C00C9DB76 /* SDL_ttf.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL_ttf.xcodeproj; path = ../SDL_ttf/Xcode/SDL_ttf.xcodeproj; sourceTree = "<group>"; };
+		52401C242C502E6B00C9DB76 /* ruba.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ruba.ttf; sourceTree = "<group>"; };
+		52516D1A2C45D3F60097AA6E /* SDL.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SDL.xcodeproj; path = ../SDL/Xcode/SDL/SDL.xcodeproj; sourceTree = "<group>"; };
+		52613E1E2C3C75AC00720F5B /* Text.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Text.cpp; sourceTree = "<group>"; };
+		52613E1F2C3C75AC00720F5B /* Text.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Text.hpp; sourceTree = "<group>"; };
 		5291EA8F2C1153DA0022E7EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		52997BFD2C0BB57F00B68BB1 /* SDLBird.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SDLBird.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52997C0F2C0BB58000B68BB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -115,7 +138,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5214B0AE2C23915800AFB469 /* SDL3.framework in Frameworks */,
+				52516D222C45D4010097AA6E /* SDL3.framework in Frameworks */,
+				52401BFB2C50035700C9DB76 /* SDL3_ttf.framework in Frameworks */,
 				522565712C1A7C54005C84DE /* SDL3_image.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +158,7 @@
 		5225657B2C1A9D08005C84DE /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				52401C242C502E6B00C9DB76 /* ruba.ttf */,
 				52F814442C2D1FF200A719CF /* pipe.png */,
 				5214B08E2C2332B400AFB469 /* backgroundLandscape.png */,
 				5214B08C2C23328C00AFB469 /* backgroundPortrait.png */,
@@ -178,8 +203,26 @@
 				52F814742C2E6CD800A719CF /* MainScene.hpp */,
 				520F647B2C3B64DD00EB2EF1 /* UUID.cpp */,
 				520F647C2C3B64DD00EB2EF1 /* UUID.hpp */,
+				52613E1E2C3C75AC00720F5B /* Text.cpp */,
+				52613E1F2C3C75AC00720F5B /* Text.hpp */,
 			);
 			path = src;
+			sourceTree = "<group>";
+		};
+		52401BF32C50034C00C9DB76 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52401BFA2C50034C00C9DB76 /* SDL3_ttf.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		52516D1B2C45D3F60097AA6E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				52516D212C45D3F60097AA6E /* SDL3.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		52997BF42C0BB57F00B68BB1 = {
@@ -215,7 +258,8 @@
 		52997C232C0BB63E00B68BB1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5214B0AD2C23915800AFB469 /* SDL3.framework */,
+				52401BF22C50034C00C9DB76 /* SDL_ttf.xcodeproj */,
+				52516D1A2C45D3F60097AA6E /* SDL.xcodeproj */,
 				5225655E2C1A7C49005C84DE /* SDL_image.xcodeproj */,
 			);
 			name = Frameworks;
@@ -269,8 +313,16 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 52516D1B2C45D3F60097AA6E /* Products */;
+					ProjectRef = 52516D1A2C45D3F60097AA6E /* SDL.xcodeproj */;
+				},
+				{
 					ProductGroup = 5225655F2C1A7C49005C84DE /* Products */;
 					ProjectRef = 5225655E2C1A7C49005C84DE /* SDL_image.xcodeproj */;
+				},
+				{
+					ProductGroup = 52401BF32C50034C00C9DB76 /* Products */;
+					ProjectRef = 52401BF22C50034C00C9DB76 /* SDL_ttf.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -288,6 +340,20 @@
 			remoteRef = 522565682C1A7C49005C84DE /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		52401BFA2C50034C00C9DB76 /* SDL3_ttf.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SDL3_ttf.framework;
+			remoteRef = 52401BF92C50034C00C9DB76 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		52516D212C45D3F60097AA6E /* SDL3.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SDL3.framework;
+			remoteRef = 52516D202C45D3F60097AA6E /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -295,6 +361,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52401C252C502E6B00C9DB76 /* ruba.ttf in Resources */,
 				5214B08D2C23328C00AFB469 /* backgroundPortrait.png in Resources */,
 				5214B08F2C2332B500AFB469 /* backgroundLandscape.png in Resources */,
 				52F814482C2D1FF200A719CF /* pipe.png in Resources */,
@@ -317,6 +384,7 @@
 				520F647D2C3B64DD00EB2EF1 /* UUID.cpp in Sources */,
 				52B085672C22479B00FD5FB8 /* Entity.cpp in Sources */,
 				520F647A2C3B55B000EB2EF1 /* Collisions.cpp in Sources */,
+				52613E202C3C75AC00720F5B /* Text.cpp in Sources */,
 				520F64782C3B55B000EB2EF1 /* Ground.cpp in Sources */,
 				52F814752C2E6CD800A719CF /* MainScene.cpp in Sources */,
 				52B0855E2C22470000FD5FB8 /* PhysicsBody.cpp in Sources */,

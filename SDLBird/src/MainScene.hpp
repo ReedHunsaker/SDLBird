@@ -16,7 +16,7 @@
 #include "Ground.hpp"
 #include "Scene.hpp"
 #include "Pipes.hpp"
-
+#include "Text.hpp"
 
 class MainScene: public Scene {
     Background background;
@@ -25,6 +25,8 @@ class MainScene: public Scene {
     Pipes pipeTwo;
     Ceiling ceiling;
     Ground ground;
+    Text score;
+    
 public:
     MainScene(SDL_Window *window, SDL_Renderer *renderer);
 };
